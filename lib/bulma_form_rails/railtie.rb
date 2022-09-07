@@ -3,10 +3,13 @@ require 'bulma_form_rails/helpers'
 module BulmaForm
   class Railtie < Rails::Railtie
     @@bulma_form_initializer = Proc.new do
+      VIEW_PATH = 'lib/bulma_form_rails/views'
+      
       ActionView::Helpers.send :include, Helpers
 
       ActionController::Base.class_eval do
-        append_view_path 'lib/bulma_form_rails/views'
+        append_view_path VIEW_PATH
+        append_view_path File.join(Gem.loaded_specs['bulma_form_rails'].full_gem_path, VIEW_PATH)
         helper_method :lookup_attributes
 
         def self.bulma_child_forms(attributes)
