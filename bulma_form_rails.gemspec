@@ -11,5 +11,5 @@ Gem::Specification.new do |spec|
   spec.license = 'BSD-3-Clause'
   spec.platform = Gem::Platform::RUBY
   spec.required_ruby_version = '>= 3.1.2'
-  spec.files = Dir['README.md', 'LICENSE', 'lib/**/*.rb', 'lib/bulma_form_rails/views/*.html.erb', 'test/**/*.rb', 'bulma_form_rails.gemspec']
+  spec.files = Dir['README.md', 'LICENSE', 'lib/**/*.rb', 'lib/bulma_form_rails/views/*.html.erb', 'test/**/*.rb', 'bulma_form_rails.gemspec', 'doc/**/*']
 end
