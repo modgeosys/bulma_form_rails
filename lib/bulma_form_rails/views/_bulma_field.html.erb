@@ -1,0 +1,10 @@
+<% additional_field_label_classes ||= '' %>
+<div class="field is-horizontal<%= options[:outer_class] ? " #{options[:outer_class]}" : '' %>" <%= options[:outer_id] ? 'id=' + options[:outer_id] : '' %> <%= options[:style] ? raw('style="' + options[:style] + '"') : '' %>>
+  <div class="field-label <%= additional_field_label_classes %>">
+    <%= bulma_form_or_object_component form_or_object, :label, *label_parameters %>
+  </div>
+  <div class="field-body">
+    <% options.delete(:style); options.delete(:outer_id); options.delete(:outer_class) %>
+    <%= yield(@form_or_object) %>
+  </div>
+</div>

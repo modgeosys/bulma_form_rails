@@ -1,0 +1,15 @@
+<% if model %>
+  <%= bulma_message_box %>
+  <% if !model.errors.empty? || !flash[:error].blank? %>
+    <div class="message is-danger">
+      <div class="message-header">
+        <p>Invalid Input</p>
+      </div>
+      <div class="message-body">
+        <% model.errors.full_messages.each do |message| %>
+          <p><%= message %></p>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+<% end %>

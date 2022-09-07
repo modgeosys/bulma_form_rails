@@ -1,0 +1,61 @@
+<% totals ||= nil %>
+<% container ||= '' %>
+<% container_class = container.gsub(/\[\d+\]/, '').gsub(/\[|\]/, '-') %>
+<% form_id ||= '' %>
+<% stimulus_controller_name = name.pluralize.dasherize %>
+<% attributes = lookup_attributes(attributes_key) if attributes_key %>
+<%
+  begin
+    hidden_fields = "#{name.classify}::HIDDEN_FIELDS".constantize
+  rescue NameError, LoadError
+    hidden_fields = []
+  end
+%>
+
+<tr class="subform-record-row" id="<%= "#{name.pluralize}#{container}[#{child_counter}]" %>" data-child-objects-target="child-objects.row">
+  <% attributes.each do |attribute| %>
+    <td class="subform-field-cell">
+      <% attribute_value = child.send(attribute) %>
+      <% if hidden_fields.include? attribute.to_sym %>
+			  <%= hidden_field_tag "#{name.pluralize}#{container}[#{child_counter}][#{attribute}]", attribute_value, class: "#{name.pluralize}#{container_class}_#{attribute}" %>
+      <% else %>
+        <% if eval %Q|!child.respond_to?("#{attribute}=")| %>
+          <% if eval "#{name.classify}::WRITE_ONCE_ATTRIBUTES.detect {|woa| woa == :#{attribute}}" %>
+			  		<% if child.respond_to?(:format_for_value) -%>
+			  			<%= hidden_field_tag "#{name.pluralize}#{container}[#{child_counter}][#{attribute}]", child.format_for_value(attribute, attribute_value), class: "#{name.pluralize}#{container_class}_#{attribute}" %>
+			  		<% else -%>
+            	<%= hidden_field_tag "#{name.pluralize}#{container}[#{child_counter}][#{attribute}]", (attribute_value.respond_to?(:to_html) ? attribute_value.to_html : attribute_value), class: "#{name.pluralize}#{container_class}_#{attribute}" %>
+			  		<% end -%>
+          <% end %>
+			  	<% if child.respond_to?(:format_for_display) -%>
+        		<span id='<%="#{name.pluralize}#{container}_display[#{child_counter}][#{attribute}]"%>'><%= h child.format_for_display(attribute, attribute_value) %></span>
+			  	<% else -%>
+          	<span id='<%="#{name.pluralize}#{container}_display[#{child_counter}][#{attribute}]"%>'><%= h(attribute_value.respond_to?(:to_html) ? attribute_value.to_html : attribute_value) %></span>
+			  	<% end -%>
+        <% else %>
+          <% if attribute[-4..-1] == 'time' %>
+            <%= select_time(attribute_value, prefix: "#{name.pluralize}#{container}[#{child_counter}][#{attribute}]", minute_step: 5, ampm: true, include_blank: true, class: 'select is-small') %>
+          <% elsif attribute[-3..-1] == '_id' %>
+			  		<%= select_tag "#{name.pluralize}#{container}[#{child_counter}][#{attribute}]", options_for_select(id_select_options(attribute).unshift(["Select One", ""]), attribute_value.to_i), class: 'select is-small' %>
+			  	<% else %>
+            <%= text_field_tag "#{name.pluralize}#{container}[#{child_counter}][#{attribute}]", (attribute_value.respond_to?(:to_html) ? attribute_value.to_html : attribute_value), size: (attribute == "covers" ? 2 : 10), class: "#{name.pluralize}#{container_class}_#{attribute} input is-small", data: {"#{stimulus_controller_name}-container": container, "#{stimulus_controller_name}-container-class": container_class, "#{stimulus_controller_name}-form-id": form_id, action: "change->#{stimulus_controller_name}#updateTotals"} %>
+          <% end %>
+        <% end %>
+      <% end %>
+      <% field_index = attributes.index(attribute) %>
+      <% totals[field_index] += attribute_value.to_f if (totals && field_index && totals[field_index] && attribute_value.respond_to?(:to_f)) %>
+    </td>
+  <% end %>
+  <% unless system_controlled %>
+    <td class="subform-record-control-cell">
+      <%= button_tag "delete", type: :button, class: 'button is-small is-danger', data: {action: 'click->child-objects#deleteRow'} %>
+    </td>
+  <% end %>
+</tr>
+<% if last && !system_controlled %>
+  <tr class="subform-control-row" id="<%= name %>-adder-bar">
+    <td class="subform-control-cell" colspan="<%= attributes.size + 1 %>">
+      <%= button_tag "add another", type: :button, class: 'button is-small is-primary', data: {action: 'click->child-objects#addRow'} %>
+    </td>
+  </tr>
+<% end %>

@@ -1,0 +1,35 @@
+<% if !flash[:notice].blank? %>
+  <div class="message is-primary">
+    <div class="message-header">
+      <p>Notice</p>
+    </div>
+    <div class="message-body">
+      <p><%= flash[:notice] %></p>
+    </div>
+  </div>
+  <% flash.discard(:notice) %>
+<% end %>
+
+<% if !flash[:warning].blank? %>
+  <div class="message is-warning">
+    <div class="message-header">
+      <p>Warning</p>
+    </div>
+    <div class="message-body">
+      <p><%= flash[:warning] %></p>
+    </div>
+  </div>
+  <% flash.discard(:warning) %>
+<% end %>
+
+<% if !flash[:error].blank? %>
+  <div class="message is-danger">
+    <div class="message-header">
+      <p>Error</p>
+    </div>
+    <div class="message-body">
+      <p><%= flash[:error] %></p>
+    </div>
+  </div>
+  <% flash.discard(:error) %>
+<% end %>

@@ -1,0 +1,61 @@
+<% title ||= name %>
+<% container ||= '' %>
+<% system_controlled = false if system_controlled.nil? %>
+<% form_id ||= nil %>
+<% attributes_key ||= nil %>
+<% attributes = lookup_attributes(attributes_key) unless attributes_key.blank? %>
+<% totals = Array.new(attributes.size) %>
+<% total_columns ||= [] %>
+<% total_columns.each {|total_column| totals[total_column - 1] = 0.00} %>
+<%
+  begin
+    hidden_fields = "#{name.classify}::HIDDEN_FIELDS".constantize
+  rescue NameError, LoadError
+    hidden_fields = []
+  end
+%>
+
+<div class="field is-horizontal">
+  <div class="field-label is-normal">
+    <% if container.empty? %>
+      <label class="label"><%= title.tr("_", " ").capitalize_words.pluralize %></label>
+    <% end %>
+  </div>
+  <div class="field-body">
+    <div class="field">
+      <div class="control">
+        <table class="table is-striped is-hoverable is-narrow">
+          <tbody id="<%= name %>-table" data-controller="<%= system_controlled ?  name.pluralize.dasherize : 'child-objects' %>" data-child-objects-target="table" data-child-objects-url-value="<%= url %>" data-child-objects-name-value="<%= name %>" data-child-objects-attributes-key-value="<%= attributes_key %>">
+          <tr>
+            <% attributes.each do |attribute| %>
+              <th class="has-background-primary has-text-white">
+                <% if not hidden_fields.include? attribute.to_sym %>
+                  <% if attribute[-3..-1] == "_id" -%>
+                    <%= attribute[0..-3].tr("_", " ").capitalize_words %>
+                  <% else -%>
+                    <%= attribute.tr("_", " ").capitalize_words %>
+                  <% end -%>
+                <% end -%>
+              </th>
+            <% end %>
+            <th class="has-background-primary has-text-white"></th>
+          </tr>
+          <%= render partial: '/child', collection: children, locals: { name: name, container: container, attributes: attributes, last: false, system_controlled: system_controlled, totals: totals, attributes_key: attributes_key, form_id: form_id } %>
+          <% unless total_columns.empty? %>
+            <tr>
+              <% totals.each do |total| %>
+                <td>
+                  <strong><%= total.nil? ? '' : raw("<span id='#{name.pluralize}#{container}_total' data-#{name.pluralize.dasherize}-target='#{name.pluralize.dasherize}#{container}_total'>#{ASAP::Money.new(:amount => total).to_html}</span>") %></strong>
+                </td>
+              <% end %>
+            </tr>
+          <% end %>
+          <% unless system_controlled %>
+            <%= render partial: '/child', locals: { child: eval("#{name.capitalize.gsub(/_(.)/) {|s| $1.capitalize}}.new"), container: container, child_counter: children.size, name: name, attributes: attributes, attributes_key: attributes_key, form_id: form_id, last: true, system_controlled: false } %>
+          <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

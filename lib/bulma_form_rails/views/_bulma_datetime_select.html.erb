@@ -1,0 +1,10 @@
+<div class="field is-narrow">
+  <div class="control">
+    <div class="<%= options[:class] %>">
+      <% time_select_tags = capture do %>
+        <%= bulma_form_or_object_component form_or_object, :datetime_select, options, html_options %>
+      <% end %>
+      <%= render inline: bulma_datetime_select_tags(time_select_tags) %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="level">
+  <div class="level-left">
+    <% unless options[:exclude_submit_button] %>
+      <div class="level-item">
+        <%= form.submit class: 'button is-primary', id: 'primary_submit_button' %>
+      </div>
+    <% end %>
+    <div class="level-item">
+      <%= link_to 'Never Mind', url, class: 'button is-warning' %>
+    </div>
+    <% if block_given? %>
+      <div class="level-item">
+        <%= yield %>
+      </div>
+    <% end %>
+  </div>
+</div>

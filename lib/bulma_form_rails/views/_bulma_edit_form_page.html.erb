@@ -1,0 +1,15 @@
+<section class="section">
+	<div class="level">
+		<div class="level-left">
+			<div class="level-item">
+				<h1 class="title">Edit <%= name.to_s.humanize %></h1>
+			</div>
+		</div>
+		<div class="level-right">
+			<div class="level-item">
+				<%= link_to 'Never Mind', models_path, class: 'button is-warning' %>
+			</div>
+		</div>
+	</div>
+	<%= render 'form', name => model, url: model_path %>
+</section>

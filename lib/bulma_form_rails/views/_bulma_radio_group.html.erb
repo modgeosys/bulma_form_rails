@@ -1,0 +1,6 @@
+<div class="field is-narrow">
+  <% choices.each do |choice| %>
+    <%= bulma_form_or_object_component form_or_object, :radio_button, field_name, choice[0], {class: 'radio'}.merge(choice[2] ? choice[2] : {}).merge(options) %>
+    <%= bulma_form_or_object_component form_or_object, :label, choice[1], options %>
+  <% end %>
+</div>

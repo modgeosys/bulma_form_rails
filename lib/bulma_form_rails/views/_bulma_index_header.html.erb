@@ -1,0 +1,16 @@
+<%= bulma_message_box %>
+
+<div class="level">
+  <div class="level-left">
+    <div class="level-item">
+      <h1 class="title"><%= name.to_s.pluralize.humanize %></h1>
+    </div>
+  </div>
+  <div class="level-right">
+    <div class="level-item">
+      <div class="buttons">
+        <%= link_to "New", models_path, class: 'button is-primary' %>
+      </div>
+    </div>
+  </div>
+</div>
