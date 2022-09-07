@@ -18,7 +18,7 @@
 <div class="field is-horizontal">
   <div class="field-label is-normal">
     <% if container.empty? %>
-      <label class="label"><%= title.tr("_", " ").capitalize_words.pluralize %></label>
+      <label class="label"><%= title.tr("_", " ").pluralize.split.each(&:capitalize!).join ' ' %></label>
     <% end %>
   </div>
   <div class="field-body">
@@ -33,7 +33,7 @@
                   <% if attribute[-3..-1] == "_id" -%>
                     <%= attribute[0..-3].tr("_", " ").capitalize_words %>
                   <% else -%>
-                    <%= attribute.tr("_", " ").capitalize_words %>
+                    <%= attribute.tr("_", " ").split.each(&:capitalize!).join ' ' %>
                   <% end -%>
                 <% end -%>
               </th>

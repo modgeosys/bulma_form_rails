@@ -51,17 +51,13 @@ module BulmaForm
   
     # Render a standard model flash message box.
     def bulma_message_box
-      output = render partial: '/bulma_message_box'
-      logger.info(output.class.inspect)
-      output
+      render partial: '/bulma_message_box'
     end
   
     # Render a standard model validation box.
     # * +model+ - the model object
     def bulma_validation_box(model)
-      output = render partial: '/bulma_validation_box', locals: {model: model}
-      logger.warn(output.class.inspect)
-      output
+      render partial: '/bulma_validation_box', locals: {model: model}
     end
     
     # Render a standard model form page footer.

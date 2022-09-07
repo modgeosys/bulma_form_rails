@@ -36,6 +36,7 @@ end
 module BulmaForm
   class Railtie
     @@child_attributes = {sample_model: ['name', 'number']}
+    @@bulma_form_initializer.call
   end
 end
 

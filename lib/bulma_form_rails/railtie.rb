@@ -2,13 +2,13 @@ require 'bulma_form_rails/helpers'
 
 module BulmaForm
   class Railtie < Rails::Railtie
-    config.after_initialize do
+    @@bulma_form_initializer = Proc.new do
       ActionView::Helpers.send :include, Helpers
-      
+
       ActionController::Base.class_eval do
         append_view_path 'lib/bulma_form_rails/views'
         helper_method :lookup_attributes
-        
+
         def self.bulma_child_forms(attributes)
           class_eval do
             def add_child
@@ -39,5 +39,7 @@ module BulmaForm
         end
       end
     end
+    
+    config.after_initialize(&@@bulma_form_initializer)
   end
 end
