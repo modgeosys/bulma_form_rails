@@ -1,7 +1,11 @@
 ENV['RAILS_ENV'] ||= 'test'
 # require_relative "../config/environment"
-# require "rails/test_help"
+# require 'active_support/all'
+require 'rails'
+require 'action_view'
+require "rails/test_help"
 require 'minitest/autorun'
+require 'bulma_form_rails'
 
 class SampleErrors
   attr_accessor :full_messages
