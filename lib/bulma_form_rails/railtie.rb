@@ -2,9 +2,9 @@ require 'bulma_form_rails/helpers'
 
 module BulmaForm
   class Railtie < Rails::Railtie
+    VIEW_PATH = 'lib/bulma_form_rails/views'
+    
     @@bulma_form_initializer = Proc.new do
-      VIEW_PATH = 'lib/bulma_form_rails/views'
-      
       ActionView::Helpers.send :include, Helpers
 
       ActionController::Base.class_eval do
@@ -43,6 +43,6 @@ module BulmaForm
       end
     end
     
-    config.after_initialize(&@@bulma_form_initializer)
+    ActiveSupport.on_load(:action_view, &@@bulma_form_initializer)
   end
 end
