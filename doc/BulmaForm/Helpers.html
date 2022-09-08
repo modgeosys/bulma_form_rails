@@ -94,6 +94,10 @@
 
   <section class="description">
     
+<p><img src="../images/moderngeosystems_logo.png"></p>
+
+<p>This Ruby on Rails Helper module allows easy and efficient web form construction with labeled fields of different types. It also supports tabular editable multi-object subforms.</p>
+
   </section>
 
   <section id="5Buntitled-5D" class="documentation-section">
@@ -361,7 +365,7 @@
         </div>
 
         <div class="method-description">
-          <p>Render the header for a standard index page.</p>
+          <p>Render the header for a standard index page.  Automatically calls <code>bulma_message_box</code>.</p>
 <ul><li>
 <p><code>name</code> - a symbol representing the model name</p>
 </li><li>
@@ -436,7 +440,7 @@
         </div>
 
         <div class="method-description">
-          <p>Render a standard model flash message box.</p>
+          <p>Render a standard flash messages box.  Automatically included with <code>bulma_validation_box</code> and <code>bulma_index_header</code> output.</p>
 
           <div class="method-source-code" id="bulma_message_box-source">
             <pre><span class="ruby-comment"># File lib/bulma_form_rails/helpers.rb, line 53</span>
@@ -657,7 +661,7 @@
         </div>
 
         <div class="method-description">
-          <p>Render a standard model validation box.</p>
+          <p>Render a standard model validation messages box.  Automatically calls <code>bulma_message_box</code>.</p>
 <ul><li>
 <p><code>model</code> - the model object</p>
 </li></ul>
