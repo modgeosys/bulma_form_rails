@@ -25,7 +25,7 @@ module BulmaForm
       render partial: '/children', object: collection, locals: {url: add_child_path, name: name, attributes_key: attributes_key}.merge(options)
     end
     
-    # Render the header for a standard index page.
+    # Render the header for a standard index page.  Automatically calls +bulma_message_box+.
     # * +name+ - a symbol representing the model name
     # * +models_path+ - the controller URL path for the action that renders the model collection
     def bulma_index_header(name, models_path)
@@ -49,12 +49,12 @@ module BulmaForm
       render partial: '/bulma_edit_form_page', locals: {name: name, model: model, models_path: models_path, model_path: model_path}
     end
   
-    # Render a standard model flash message box.
+    # Render a standard flash messages box.  Automatically included with +bulma_validation_box+ and +bulma_index_header+ output.
     def bulma_message_box
       render partial: '/bulma_message_box'
     end
   
-    # Render a standard model validation box.
+    # Render a standard model validation messages box.  Automatically calls +bulma_message_box+.
     # * +model+ - the model object
     def bulma_validation_box(model)
       render partial: '/bulma_validation_box', locals: {model: model}

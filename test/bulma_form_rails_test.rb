@@ -1,6 +1,4 @@
 ENV['RAILS_ENV'] ||= 'test'
-# require_relative "../config/environment"
-# require 'active_support/all'
 require 'rails'
 require 'action_view'
 require "rails/test_help"
