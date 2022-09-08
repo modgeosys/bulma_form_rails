@@ -15,6 +15,7 @@ Gem::Specification.new do |spec|
   spec.files = Dir['README.md', 'LICENSE', 'lib/**/*']
   
   spec.add_dependency 'rails', '~> 7.0.3'
+  spec.add_dependency 'turbo-rails', '~> 1.1.1'
   spec.add_dependency 'stimulus-rails', '~> 1.0.4'
   spec.add_dependency 'pagy', '~> 5.1'
   spec.add_dependency 'rexml', '~> 3.2.5'
