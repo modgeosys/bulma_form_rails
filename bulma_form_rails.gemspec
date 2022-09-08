@@ -11,5 +11,15 @@ Gem::Specification.new do |spec|
   spec.license = 'BSD-3-Clause'
   spec.platform = Gem::Platform::RUBY
   spec.required_ruby_version = '>= 3.1.2'
+  
   spec.files = Dir['README.md', 'LICENSE', 'lib/**/*']
+  
+  spec.add_dependency 'rails', '~> 7.0.3'
+  spec.add_dependency 'stimulus-rails', '~> 1.0.4'
+  spec.add_dependency 'pagy', '~> 5.1'
+  spec.add_dependency 'rexml', '~> 3.2.5'
+  
+  spec.add_development_dependency 'debug', '~> 1.6.2'
+  spec.add_development_dependency 'rbs_rails', '~> 0.11.0'
+  spec.add_development_dependency 'rdoc', '~> 6.4.0'
 end
