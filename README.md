@@ -31,15 +31,15 @@
 
 ## Installation
 Add this line to your application's Gemfile:
-```
+```ruby
 gem 'bulma_form_rails`
 ```
 And then execute:
-```
+```bash
 bundle
 ```
 Or install it yourself as:
-```
+```ruby
 gem install bulma_form_rails
 ```
 
@@ -47,7 +47,7 @@ gem install bulma_form_rails
 (for a hypothetical user management UI)
 
 ### Sample `index.html.erb` page
-```
+```html
 <section class="section">
   <%= bulma_index_header :user, new_user_path(page: params[:page]) %>
   <!-- Your index action content goes here. -->
@@ -56,17 +56,17 @@ gem install bulma_form_rails
 ```
 
 ### Sample `new.html.erb` page
-```
+```html
 <%= bulma_new_form_page :user, @user, users_path(page: params[:page]) %>
 ```
 
 ### Sample `edit.html.erb` page
-```
+```html
 <%= bulma_edit_form_page :user, @user, users_path(page: params[:page]), user_path(page: params[:page]) %>
 ```
 
 ### Sample `_form.html.erb` partial
-```
+```html
 <%= form_with model: user, url: url do |form| %>
   <%= bulma_validation_box user %>
   
