@@ -1,0 +1,68 @@
+module BulmaForm
+  module Helper
+    # Renders a child objects collection management UI,
+    # including row addition and deletion buttons by default.
+    def bulma_child_objects: (Array[untyped] collection, String name, Symbol attributes_key, String add_child_path, ?::Hash[untyped, untyped] options) -> untyped
+  
+    # Render the header for a standard index page.
+    def bulma_index_header: (Symbol name, String models_path) -> untyped
+  
+    # Render a standard model creation form page.
+    def bulma_new_form_page: (Symbol name, RbsRails::ActiveRecord model, String models_path) -> untyped
+  
+    # Render a standard model edit form page.
+    def bulma_edit_form_page: (Symbol name, RbsRails::ActiveRecord model, String models_path, String model_path) -> untyped
+  
+    # Render a standard model flash message box.
+    def bulma_message_box: () -> untyped
+  
+    # Render a standard model validation box.
+    def bulma_validation_box: (RbsRails::ActiveRecord model) -> untyped
+  
+    # Render a standard model form page footer.
+    def bulma_form_footer: (untyped form, String models_path, ?::Hash[untyped, untyped] options) { () -> untyped } -> untyped
+  
+    # Render a labeled field with custom content.
+    def bulma_custom_field: (untyped form_or_object, Symbol field_name, ?::Hash[untyped, untyped] options) { () -> untyped } -> untyped
+  
+    VALID_INPUT_TYPES: ::Array[:color | :date | :datetime_local | :email | :file | :hidden | :month | :number | :password | :phone | :telephone | :text | :time | :url]
+  
+    # Render a labeled input field.
+    def bulma_input: (untyped form_or_object, Symbol field_name, ?::Symbol `type`, ?::Hash[untyped, untyped] options) -> untyped
+  
+    # Render a labeled text area field.
+    def bulma_text_area: (untyped form_or_object, Symbol field_name, ?::Hash[untyped, untyped] options) -> untyped
+  
+    # Render a labeled checkbox field.
+    def bulma_check_box: (untyped form_or_object, Symbol field_name, ?::Hash[untyped, untyped] options) -> untyped
+  
+    def bulma_radio_group: (untyped form_or_object, Symbol field_name, Array[untyped] choices, ?::Hash[untyped, untyped] options) -> untyped
+  
+    VALID_SELECT_TYPES: ::Array[:collection | :date | :datetime | :general | :grouped_collection | :time | :time_zone | :weekday]
+  
+    # Render a labeled selection field.
+    def bulma_select: (untyped form_or_object, Symbol field_name, Array[untyped] choices, ?::Hash[untyped, untyped] options, ?::Hash[untyped, untyped] html_options) -> untyped
+  
+    # Render a labeled date+time selection field.
+    def bulma_datetime_select: (untyped form_or_object, Symbol field_name, ?::Hash[untyped, untyped] options, ?::Hash[untyped, untyped] html_options) -> untyped
+  
+    # Render a labeled time selection field.
+    def bulma_time_select: (untyped form_or_object, Symbol field_name, ?::Hash[untyped, untyped] options, ?::Hash[untyped, untyped] html_options) -> untyped
+  
+    # Render time selection tags modified for bulma compatibility.
+    def bulma_datetime_select_tags: (String html) -> String
+  
+    # Render any form element, regardless of whether a form builder or object name is provided.
+    def bulma_form_or_object_component: (untyped form_or_object, Symbol method, ?::Array[untyped] params) -> untyped 
+  
+    private
+  
+    def prepare_common_parameters: (Symbol field_name, untyped form_or_object, ?::Hash[untyped, untyped] options) -> { form_or_object: untyped, field_name: untyped, label_parameters: untyped, options: untyped }
+  
+    # Grab and purge the textual field label from options if specified.
+    def prepare_label_parameters: (Symbol field_name, ?::Hash[untyped, untyped] options) -> untyped
+  
+    # Grab and purge value CSS classes from options if specified.
+    def prepare_value_class!: (?::Hash[untyped, untyped] options, ?base_class: untyped) -> untyped
+  end
+end

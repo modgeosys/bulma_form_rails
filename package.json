@@ -1,0 +1,45 @@
+{
+  "name": "@modgeosys/bulma_form_rails",
+  "version": "0.9.1",
+  "description": "Stimulus controllers for BulmaFormRails Gem",
+  "module": "lib/javascript/controllers/index.js",
+  "main": "lib/javascript/controllers/index.js",
+  "files": [
+    "lib/javascript/controllers"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@hotwired/turbo": "^7.1.0",
+    "stimulus": "^3.0.1",
+    "@rails/request.js": "^0.0.6",
+    "bulma": "^0.9.4",
+    "bulma-popover": "^1.1.1",
+    "bulmahead": "^1.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/modgeosys/bulma_form_rails.git"
+  },
+  "keywords": [
+    "turbo",
+    "stimulus",
+    "bulma",
+    "form",
+    "rails",
+    "js"
+  ],
+  "author": "Modern geoSystems",
+  "contributors": [
+    {
+      "name": "Kevin Weller",
+      "email": "kweller@moderngeosystems.com"
+    }
+  ],
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/modgeosys/bulma_form_rails/issues"
+  },
+  "homepage": "https://github.com/modgeosys/bulma_form_rails#readme"
+}
