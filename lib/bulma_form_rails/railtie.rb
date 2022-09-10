@@ -2,6 +2,13 @@ require 'bulma_form_rails/helpers'
 
 module BulmaForm
   class Railtie < Rails::Railtie
+    railtie_name :bulma_form_rails
+    
+    rake_tasks do
+      path = File.expand_path(__dir__)
+      Dir.glob("#{path}/../tasks/**/*.rake").each {|f| load f}
+    end
+    
     VIEW_PATH = 'lib/bulma_form_rails/views'
     
     @@bulma_form_initializer = Proc.new do

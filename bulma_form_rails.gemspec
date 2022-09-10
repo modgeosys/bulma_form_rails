@@ -21,10 +21,10 @@ Gem::Specification.new do |spec|
   end
   spec.require_paths = ['lib']
   
-  spec.add_dependency 'rails', '~> 7.0.3'
+  spec.add_dependency 'rails', '~> 7.0.4'
   spec.add_dependency 'turbo-rails', '~> 1.1.1'
-  spec.add_dependency 'stimulus-rails', '~> 1.0.4'
-  spec.add_dependency 'pagy', '~> 5.1'
+  spec.add_dependency 'stimulus-rails', '~> 1.1.0'
+  spec.add_dependency 'pagy', '~> 5.10'
   spec.add_dependency 'rexml', '~> 3.2.5'
   
   spec.add_development_dependency 'jsbundling-rails', '~> 1.0.3'

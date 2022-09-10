@@ -1,3 +1,4 @@
+![Modern geoSystems logo](https://github.com/modgeosys/bulma_form_rails/blob/8fde36bf59e86254cfe9e792f395caba6f60a2a4/doc/images/moderngeosystems_logo.png?raw=true)
 # bulma_form_rails
 `bulma_form_rails` provides Rails helpers for efficiently building forms using the Bulma CSS library.
 
@@ -33,11 +34,14 @@
 Install the gem and add to the application's Gemfile by executing:
 ```bash
 $ bundle add bulma_form_rails
+$ rails bulma_form_rails:install
 ```
 Or install it yourself as:
 ```bash
 $ gem install bulma_form_rails
+$ rails bulma_form_rails:install
 ```
+`rails bulma_form_rails:install` will add required resources to your application.
 
 ## Examples
 (for a hypothetical user management UI)
@@ -47,7 +51,7 @@ $ gem install bulma_form_rails
 <section class="section">
   <%= bulma_index_header :user, new_user_path(page: params[:page]) %>
   <!-- Your index action content goes here. -->
-  <%== pagy_bulma_nav(@pagy) %>
+  <%= pagy_bulma_nav(@pagy) %>
 </section>
 ```
 
