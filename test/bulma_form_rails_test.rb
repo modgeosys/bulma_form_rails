@@ -26,7 +26,7 @@ class SampleModel
   def initialize(name = '', number = 1)
     @name   = name
     @number = number
-    @errors = SampleErrors.new(full_messages: ['field1 invalid', 'field2 invalid'])
+    @errors = SampleErrors.new(['field1 invalid', 'field2 invalid'])
     super()
   end
 end
@@ -109,70 +109,70 @@ class BulmaFormHelperTest < ActionView::TestCase
   end
 
   test "#bulma_new_form_page displays a model-specific page title" do
-    assert_match /<h1 class="title">Create new #{@model_name.humanize.capitalize}<\/h1>/, @bulma_new_form_page_results
+    assert_match %r|<h1 class="title">Create new #{@model_name.humanize.capitalize}</h1>|, @bulma_new_form_page_results
   end
 
   test "#bulma_edit_form_page displays a model-specific page title" do
-    assert_match /<h1 class="title">Edit #{@model_name.humanize.capitalize}<\/h1>/, @bulma_edit_form_page_results
+    assert_match %r|<h1 class="title">Edit #{@model_name.humanize.capitalize}</h1>|, @bulma_edit_form_page_results
   end
   
   test "#bulma_index_header displays the readable plural model name" do
-    assert_match /<h1 class="title">#{@model_name.humanize.pluralize}<\/h1>/, @bulma_index_header_results
+    assert_match %r|<h1 class="title">#{@model_name.humanize.pluralize}</h1>|, @bulma_index_header_results
   end
 
   test "#bulma_index_header displays a button to navigate to the model's path" do
     # skip 'Not implemented'
-    assert_match /<a class="button is-primary" href="#{@models_path}">New<\/a>/, @bulma_index_header_results
+    assert_match %r|<a class="button is-primary" href="#{@models_path}">New</a>|, @bulma_index_header_results
   end
 
   test "#bulma_message_box includes notices" do
-    assert_match /<div class="message is-primary">\n\s*<div class="message-header">\n\s*<p>Notice<\/p>\n.*<\/div>\n.*<div class="message-body">\n\s*<p>#{flash[:notice]}<\/p>\n\s*<\/div>\n\s*<\/div>/, @bulma_message_box_results
+    assert_match %r|<div class="message is-primary">\n\s*<div class="message-header">\n\s*<p>Notice</p>\n.*</div>\n.*<div class="message-body">\n\s*<p>#{flash[:notice]}</p>\n\s*</div>\n\s*</div>|, @bulma_message_box_results
   end
 
   test "#bulma_message_box includes warnings" do
-    assert_match /<div class="message is-warning">\n\s*<div class="message-header">\n\s*<p>Warning<\/p>\n.*<\/div>\n.*<div class="message-body">\n\s*<p>#{flash[:warning]}<\/p>\n\s*<\/div>\n\s*<\/div>/, @bulma_message_box_results
+    assert_match %r|<div class="message is-warning">\n\s*<div class="message-header">\n\s*<p>Warning</p>\n.*</div>\n.*<div class="message-body">\n\s*<p>#{flash[:warning]}</p>\n\s*</div>\n\s*</div>|, @bulma_message_box_results
   end
 
   test "#bulma_message_box includes errors" do
-    assert_match /<div class="message is-danger">\n\s*<div class="message-header">\n\s*<p>Error<\/p>\n.*<\/div>\n.*<div class="message-body">\n\s*<p>#{flash[:error]}<\/p>\n\s*<\/div>\n\s*<\/div>/, @bulma_message_box_results
+    assert_match %r|<div class="message is-danger">\n\s*<div class="message-header">\n\s*<p>Error</p>\n.*</div>\n.*<div class="message-body">\n\s*<p>#{flash[:error]}</p>\n\s*</div>\n\s*</div>|, @bulma_message_box_results
   end
   
   test "#bulma_validation_box displays all error messages" do
-    @model.errors.full_messages.each { |full_message| assert_match /#{full_message}/, @bulma_validation_box_results }
+    @model.errors.full_messages.each { |full_message| assert_match %|#{full_message.gsub('[', '\[')}|, @bulma_validation_box_results }
   end
   
   test "#bulma_form_footer displays a Never Mind button" do
-    assert_match /<a class="button is-warning" href="\/#{@model_name.pluralize}">Never Mind<\/a>/, @bulma_form_footer_results
+    assert_match %r|<a class="button is-warning" href="\/#{@model_name.pluralize}">Never Mind</a>|, @bulma_form_footer_results
   end
 
   def check_default_field_label(test_results)
-    assert_match /<label class="label" for="#{@model_name}_name">Name<\/label>/, test_results
+    assert_match %r|<label class="label" for="#{@model_name}_name">Name</label>|, test_results
   end
 
   def check_specified_field_label(test_results)
-    assert_match /<label class="label" for="#{@model_name}_name">#{@alternate_field_label}<\/label>/, test_results
+    assert_match %r|<label class="label" for="#{@model_name}_name">#{@alternate_field_label}</label>|, test_results
   end
 
   test "#bulma_child_objects displays a default label" do
-    assert_match /<label class="label">#{@model_name.humanize.pluralize.titleize}<\/label>/, @bulma_child_objects_results
+    assert_match %r|<label class="label">#{@model_name.humanize.pluralize.titleize}</label>|, @bulma_child_objects_results
   end
 
   test "#bulma_child_objects displays a subform" do
-    assert_match /<tbody id="#{@model_name}-table" data-controller="child-objects" data-child-objects-target="table" data-child-objects-url-value="\/#{@model_name.pluralize}\/add_child" data-child-objects-name-value="#{@model_name}" data-child-objects-attributes-key-value="#{@model_name}">/, @bulma_child_objects_results
+    assert_match %r|<tbody id="#{@model_name}-table" data-controller="child-objects" data-child-objects-target="table" data-child-objects-url-value="\/#{@model_name.pluralize}\/add_child" data-child-objects-name-value="#{@model_name}" data-child-objects-attributes-key-value="#{@model_name}">|, @bulma_child_objects_results
   end
   
   test "#bulma_child_objects displays a model field" do
-    assert_match /<input type="text" name="#{@model_name.pluralize}\[0\]\[name\]" id="#{@model_name.pluralize}_0_name" value="#{@name}" size="10" class="#{@model_name.pluralize}_name input is-small" data-sample-models-container="" data-sample-models-container-class="" data-sample-models-form-id="" data-action="change-&gt;sample-models#updateTotals" \/>/, @bulma_child_objects_results
+    assert_match %r|<input type="text" name="#{@model_name.pluralize}\[0\]\[name\]" id="#{@model_name.pluralize}_0_name" value="#{@name}" size="10" class="#{@model_name.pluralize}_name input is-small" data-sample-models-container="" data-sample-models-container-class="" data-sample-models-form-id="" data-action="change-&gt;sample-models#updateTotals" \/>|, @bulma_child_objects_results
   end
   
   test "#bulma_child_objects displays row add and delete buttons" do
-    assert_match /<button name="button" type="button" class="button is-small is-danger" data-action="click-&gt;child-objects#deleteRow">delete<\/button>/, @bulma_child_objects_results
-    assert_match /<button name="button" type="button" class="button is-small is-primary" data-action="click-&gt;child-objects#addRow">add another<\/button>/, @bulma_child_objects_results
+    assert_match %r|<button name="button" type="button" class="button is-small is-danger" data-action="click-&gt;child-objects#deleteRow">delete</button>|, @bulma_child_objects_results
+    assert_match %r|<button name="button" type="button" class="button is-small is-primary" data-action="click-&gt;child-objects#addRow">add another</button>|, @bulma_child_objects_results
   end
   
   test "#bulma_child_objects does not display row add or delete buttons if system_controlled is set to true" do
-    assert_no_match /<button name="button" type="button" class="button is-small is-danger" data-action="click-&gt;child-objects#deleteRow">delete<\/button>/, @bulma_child_objects_system_controlled_results
-    assert_no_match /<button name="button" type="button" class="button is-small is-primary" data-action="click-&gt;child-objects#addRow">add another<\/button>/, @bulma_child_objects_system_controlled_results
+    assert_no_match %r|<button name="button" type="button" class="button is-small is-danger" data-action="click-&gt;child-objects#deleteRow">delete</button>|, @bulma_child_objects_system_controlled_results
+    assert_no_match %r|<button name="button" type="button" class="button is-small is-primary" data-action="click-&gt;child-objects#addRow">add another</button>|, @bulma_child_objects_system_controlled_results
   end
   
   test "#bulma_custom_field displays a default label" do
@@ -184,7 +184,7 @@ class BulmaFormHelperTest < ActionView::TestCase
   end
   
   test "#bulma_custom_field displays the specified content" do
-    assert_match /#{@custom_field_content}/, @bulma_custom_field_results
+    assert_match %r|#{@custom_field_content}|, @bulma_custom_field_results
   end
 
   test "#bulma_input displays a default label" do
@@ -196,19 +196,19 @@ class BulmaFormHelperTest < ActionView::TestCase
   end
 
   test "#bulma_input :text displays a text field" do
-    assert_match /<input class="input" type="text" name="#{@model_name}\[name\]" id="#{@model_name}_name" \/>/, @bulma_input_text_results
+    assert_match %r|<input class="input" type="text" name="#{@model_name}\[name\]" id="#{@model_name}_name" \/>|, @bulma_input_text_results
   end
   
   test "#bulma_input displays a field with an additional CSS class" do
-    assert_match /class="input #{@additional_class}"/, @bulma_input_text_class_results
+    assert_match %r|class="input #{@additional_class}"|, @bulma_input_text_class_results
   end
   
   test "#bulma_input :number displays a non-text field type" do
-    assert_match /<input class="input" type="number" name="#{@model_name}\[number\]" id="#{@model_name}_number" \/>/, @bulma_input_number_results
+    assert_match %r|<input class="input" type="number" name="#{@model_name}\[number\]" id="#{@model_name}_number" \/>|, @bulma_input_number_results
   end
   
   test "#bulma_input includes additional input tag attributes" do
-    assert_match /<input min="0" max="0" class="input" type="number" name="#{@model_name}\[number\]" id="#{@model_name}_number" \/>/, @bulma_input_number_options_results
+    assert_match %r|<input min="0" max="0" class="input" type="number" name="#{@model_name}\[number\]" id="#{@model_name}_number" \/>|, @bulma_input_number_options_results
   end
   
   test "#bulma_text_area displays a default label" do
@@ -220,11 +220,11 @@ class BulmaFormHelperTest < ActionView::TestCase
   end
 
   test "#bulma_text_area displays a text area field" do
-    assert_match /<textarea rows="5" cols="80" class="textarea" name="#{@model_name}\[name\]" id="#{@model_name}_name">\n\s*<\/textarea>/, @bulma_text_area_results
+    assert_match %r|<textarea rows="5" cols="80" class="textarea" name="#{@model_name}\[name\]" id="#{@model_name}_name">\n\s*</textarea>|, @bulma_text_area_results
   end
 
   test "#bulma_text_area displays a field with an additional CSS class" do
-    assert_match /<textarea rows="5" cols="80" class="textarea #{@additional_class}" name="#{@model_name}\[name\]" id="#{@model_name}_name">\n\s*<\/textarea>/, @bulma_text_area_class_results
+    assert_match %r|<textarea rows="5" cols="80" class="textarea #{@additional_class}" name="#{@model_name}\[name\]" id="#{@model_name}_name">\n\s*</textarea>|, @bulma_text_area_class_results
   end
   
   test "#bulma_check_box displays a default label" do
@@ -236,11 +236,11 @@ class BulmaFormHelperTest < ActionView::TestCase
   end
   
   test "#bulma_check_box displays a checkbox field" do
-    assert_match /<input class="checkbox" type="checkbox" value="1" name="#{@model_name}\[name\]" id="#{@model_name}_name" \/>/, @bulma_check_box_results
+    assert_match %r|<input class="checkbox" type="checkbox" value="1" name="#{@model_name}\[name\]" id="#{@model_name}_name" \/>|, @bulma_check_box_results
   end
 
   test "#bulma_check_box displays a field with an additional CSS class" do
-    assert_match /<input class="checkbox #{@additional_class}" type="checkbox" value="1" name="#{@model_name}\[name\]" id="#{@model_name}_name" \/>/, @bulma_check_box_class_results
+    assert_match %r|<input class="checkbox #{@additional_class}" type="checkbox" value="1" name="#{@model_name}\[name\]" id="#{@model_name}_name" \/>|, @bulma_check_box_class_results
   end
   
   test "#bulma_radio_group displays a default label" do
@@ -252,11 +252,11 @@ class BulmaFormHelperTest < ActionView::TestCase
   end
   
   test "#bulma_radio_group displays all radio group options" do
-    @choices.each {|choice| assert_match /<input class="radio" type="radio" value="#{choice[0]}" name="#{@model_name}\[name\]" id="#{@model_name}_name_#{choice[0]}" \/>\n\s*<label class="radio" for="#{@model_name}_#{choice[1]}">#{choice[1].to_s.humanize}<\/label>/, @bulma_radio_group_results}
+    @choices.each {|choice| assert_match %r|<input class="radio" type="radio" value="#{choice[0]}" name="#{@model_name}\[name\]" id="#{@model_name}_name_#{choice[0]}" \/>\n\s*<label class="radio" for="#{@model_name}_#{choice[1]}">#{choice[1].to_s.humanize}</label>|, @bulma_radio_group_results}
   end
   
   test "#bulma_radio_group displays all options with an additional CSS class" do
-    @choices.each {|choice| assert_match /<input class="radio #{@additional_class}" type="radio" value="#{choice[0]}" name="#{@model_name}\[name\]" id="#{@model_name}_name_#{choice[0]}" \/>\n\s*<label class="radio #{@additional_class}" for="#{@model_name}_#{choice[1]}">#{choice[1].to_s.humanize}<\/label>/, @bulma_radio_group_class_results}
+    @choices.each {|choice| assert_match %r|<input class="radio #{@additional_class}" type="radio" value="#{choice[0]}" name="#{@model_name}\[name\]" id="#{@model_name}_name_#{choice[0]}" \/>\n\s*<label class="radio #{@additional_class}" for="#{@model_name}_#{choice[1]}">#{choice[1].to_s.humanize}</label>|, @bulma_radio_group_class_results}
   end
   
   test "#bulma_select displays a default label" do
@@ -268,11 +268,11 @@ class BulmaFormHelperTest < ActionView::TestCase
   end
   
   test "#bulma_select displays all selection options" do
-    @choices.each {|choice| assert_match /<option value="#{choice[1]}">#{choice[0]}<\/option>/, @bulma_select_results}
+    @choices.each {|choice| assert_match %r|<option value="#{choice[1]}">#{choice[0]}</option>|, @bulma_select_results}
   end
 
   test "#bulma_select displays a field with an additional CSS class" do
-    assert_match /<div class="select is-fullwidth #{@additional_class}">/, @bulma_select_class_results
+    assert_match %r|<div class="select is-fullwidth #{@additional_class}">|, @bulma_select_class_results
   end
 
   test "#bulma_datetime_select displays a default label" do
@@ -284,11 +284,11 @@ class BulmaFormHelperTest < ActionView::TestCase
   end
   
   test "#bulma_datetime_select displays a date and time select tag" do
-    assert_match /<select id='#{@model_name}_.*_1i' name='#{@model_name}\[.*\(1i\)\]'>/, @bulma_datetime_select_results
+    assert_match %r|<select id='#{@model_name}_.*_1i' name='#{@model_name}\[.*\(1i\)\]'>|, @bulma_datetime_select_results
   end
 
   test "#bulma_datetime_select displays a field with an additional CSS class" do
-    assert_match /<div class="select is-fullwidth #{@additional_class}">/, @bulma_datetime_select_class_results
+    assert_match %r|<div class="select is-fullwidth #{@additional_class}">|, @bulma_datetime_select_class_results
   end
   
   test "#bulma_time_select displays a default label" do
@@ -300,10 +300,10 @@ class BulmaFormHelperTest < ActionView::TestCase
   end
   
   test "#bulma_time_select displays a time select tag" do
-    assert_match /<select id='#{@model_name}_.*_4i' name='#{@model_name}\[.*\(4i\)\]'>/, @bulma_time_select_results
+    assert_match %r|<select id='#{@model_name}_.*_4i' name='#{@model_name}\[.*\(4i\)\]'>|, @bulma_time_select_results
   end
 
   test "#bulma_time_select displays a field with an additional CSS class" do
-    assert_match /<div class="select is-fullwidth #{@additional_class}">/, @bulma_time_select_class_results
+    assert_match %r|<div class="select is-fullwidth #{@additional_class}">|, @bulma_time_select_class_results
   end
 end

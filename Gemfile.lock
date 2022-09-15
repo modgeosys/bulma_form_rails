@@ -4,6 +4,7 @@ PATH
     bulma_form_rails (0.9.1)
       pagy (~> 5.10)
       rails (~> 7.0.4)
+      rake (~> 13.0.6)
       rexml (~> 3.2.5)
       stimulus-rails (~> 1.1.0)
       turbo-rails (~> 1.1.1)

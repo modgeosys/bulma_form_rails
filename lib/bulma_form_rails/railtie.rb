@@ -23,7 +23,7 @@ module BulmaForm
           class_eval do
             def add_child
               # Protect against code injection
-              if not /\A[a-zA-Z_]+\Z/.match(params[:name])
+              if not %r|\A[a-zA-Z_]+\Z|.match(params[:name])
                 raise ActiveRecord::RecordNotFound
               end
               @name = params[:name]

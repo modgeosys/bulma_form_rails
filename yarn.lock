@@ -3,51 +3,51 @@
 
 
 "@hotwired/stimulus-webpack-helpers@^1.0.0":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@hotwired/stimulus-webpack-helpers/-/stimulus-webpack-helpers-1.0.1.tgz#4cd74487adeca576c9865ac2b9fe5cb20cef16dd"
-  integrity sha512-wa/zupVG0eWxRYJjC1IiPBdt3Lruv0RqGN+/DTMmUWUyMAEB27KXmVY6a8YpUVTM7QwVuaLNGW4EqDgrS2upXQ==
+  "integrity" "sha512-wa/zupVG0eWxRYJjC1IiPBdt3Lruv0RqGN+/DTMmUWUyMAEB27KXmVY6a8YpUVTM7QwVuaLNGW4EqDgrS2upXQ=="
+  "resolved" "https://registry.npmjs.org/@hotwired/stimulus-webpack-helpers/-/stimulus-webpack-helpers-1.0.1.tgz"
+  "version" "1.0.1"
 
-"@hotwired/stimulus@^3.1.0":
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/@hotwired/stimulus/-/stimulus-3.1.0.tgz#20215251e5afe6e0a3787285181ba1bfc9097df0"
-  integrity sha512-iDMHUhiEJ1xFeicyHcZQQgBzhtk5mPR0QZO3L6wtqzMsJEk2TKECuCQTGKjm+KJTHVY0dKq1dOOAWvODjpd2Mg==
+"@hotwired/stimulus@^3.1.0", "@hotwired/stimulus@>= 3.0":
+  "integrity" "sha512-iDMHUhiEJ1xFeicyHcZQQgBzhtk5mPR0QZO3L6wtqzMsJEk2TKECuCQTGKjm+KJTHVY0dKq1dOOAWvODjpd2Mg=="
+  "resolved" "https://registry.npmjs.org/@hotwired/stimulus/-/stimulus-3.1.0.tgz"
+  "version" "3.1.0"
 
 "@hotwired/turbo@^7.1.0":
-  version "7.1.0"
-  resolved "https://registry.yarnpkg.com/@hotwired/turbo/-/turbo-7.1.0.tgz#27e44e0e3dc5bd1d4bda0766d579cf5a14091cd7"
-  integrity sha512-Q8kGjqwPqER+CtpQudbH+3Zgs2X4zb6pBAlr6NsKTXadg45pAOvxI9i4QpuHbwSzR2+x87HUm+rot9F/Pe8rxA==
+  "integrity" "sha512-Q8kGjqwPqER+CtpQudbH+3Zgs2X4zb6pBAlr6NsKTXadg45pAOvxI9i4QpuHbwSzR2+x87HUm+rot9F/Pe8rxA=="
+  "resolved" "https://registry.npmjs.org/@hotwired/turbo/-/turbo-7.1.0.tgz"
+  "version" "7.1.0"
 
 "@rails/request.js@^0.0.6":
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/@rails/request.js/-/request.js-0.0.6.tgz#5f0347a9f363e50ec45118c7134080490cda81d8"
-  integrity sha512-dfFWaQXitYJ4kxrgGJNhDNXX54/v10YgoJqBMVe6lhqs6a4N9WD7goZJEvwin82TtK8MqUNhwfyisgKwM6dMdg==
+  "integrity" "sha512-dfFWaQXitYJ4kxrgGJNhDNXX54/v10YgoJqBMVe6lhqs6a4N9WD7goZJEvwin82TtK8MqUNhwfyisgKwM6dMdg=="
+  "resolved" "https://registry.npmjs.org/@rails/request.js/-/request.js-0.0.6.tgz"
+  "version" "0.0.6"
 
-bulma-popover@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/bulma-popover/-/bulma-popover-1.1.1.tgz#93a4e910514b121490663c3aa309705c40b69c86"
-  integrity sha512-QvYJq04usgiCvTwnEZr/xtStkKRTToO/tc7JVcdtRBIBBWNaUu4tfHAOFXDMav8NFIvN8JOiQEtHO1dHNvVr1Q==
+"bulma-popover@^1.1.1":
+  "integrity" "sha512-QvYJq04usgiCvTwnEZr/xtStkKRTToO/tc7JVcdtRBIBBWNaUu4tfHAOFXDMav8NFIvN8JOiQEtHO1dHNvVr1Q=="
+  "resolved" "https://registry.npmjs.org/bulma-popover/-/bulma-popover-1.1.1.tgz"
+  "version" "1.1.1"
 
-bulma@^0.9.4:
-  version "0.9.4"
-  resolved "https://registry.yarnpkg.com/bulma/-/bulma-0.9.4.tgz#0ca8aeb1847a34264768dba26a064c8be72674a1"
-  integrity sha512-86FlT5+1GrsgKbPLRRY7cGDg8fsJiP/jzTqXXVqiUZZ2aZT8uemEOHlU1CDU+TxklPEZ11HZNNWclRBBecP4CQ==
+"bulma@^0.9.4":
+  "integrity" "sha512-86FlT5+1GrsgKbPLRRY7cGDg8fsJiP/jzTqXXVqiUZZ2aZT8uemEOHlU1CDU+TxklPEZ11HZNNWclRBBecP4CQ=="
+  "resolved" "https://registry.npmjs.org/bulma/-/bulma-0.9.4.tgz"
+  "version" "0.9.4"
 
-bulmahead@^1.3.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/bulmahead/-/bulmahead-1.3.0.tgz#ec505a1e92ca7d5747ebfb0b2bfa1c8569dd256b"
-  integrity sha512-WOTKlNsPglCIrTDLHsrqYJXwtPfCDlSHi4RDs4DsCICzEwyRlQxD/KUzyjjvYiKG7+4cFYTLOcFIg/o2S7yHRg==
+"bulmahead@^1.3.0":
+  "integrity" "sha512-WOTKlNsPglCIrTDLHsrqYJXwtPfCDlSHi4RDs4DsCICzEwyRlQxD/KUzyjjvYiKG7+4cFYTLOcFIg/o2S7yHRg=="
+  "resolved" "https://registry.npmjs.org/bulmahead/-/bulmahead-1.3.0.tgz"
+  "version" "1.3.0"
   dependencies:
-    lodash "^4.17.13"
+    "lodash" "^4.17.13"
 
-lodash@^4.17.13:
-  version "4.17.21"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
-  integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
+"lodash@^4.17.13":
+  "integrity" "sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg=="
+  "resolved" "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz"
+  "version" "4.17.21"
 
-stimulus@^3.0.1:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/stimulus/-/stimulus-3.1.0.tgz#225298f1936f96b0eafa883b8b304266427912c3"
-  integrity sha512-ln+BtLkhemwJozr5N3I5q0kGlSv6fmcPi3JtDjBo7gnnz2tAYhK2WBhyY/EN/4+CWIwqp3qPm3Pc+i9CjIXrtg==
+"stimulus@^3.0.1":
+  "integrity" "sha512-ln+BtLkhemwJozr5N3I5q0kGlSv6fmcPi3JtDjBo7gnnz2tAYhK2WBhyY/EN/4+CWIwqp3qPm3Pc+i9CjIXrtg=="
+  "resolved" "https://registry.npmjs.org/stimulus/-/stimulus-3.1.0.tgz"
+  "version" "3.1.0"
   dependencies:
     "@hotwired/stimulus" "^3.1.0"
     "@hotwired/stimulus-webpack-helpers" "^1.0.0"
