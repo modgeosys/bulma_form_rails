@@ -8,7 +8,11 @@ module BulmaForm
       source_root File.expand_path('../../bulma_form_rails/views', __FILE__)
       
       def copy_views
-        copy_file File.join(Gem.loaded_specs['bulma_form_rails'].full_gem_path, 'lib', 'bulma_form_rails', 'views'), File.join('app', 'views', 'bulma_form_rails')
+        gem_directory =  File.join(Gem.loaded_specs['bulma_form_rails'].full_gem_path, 'lib', 'bulma_form_rails', 'views')
+        app_directory = File.join('app', 'views', 'bulma_form_rails')
+        Dir.each_child(gem_directory) do |template_file| 
+          copy_file File.join(gem_directory, template_file), File.join(app_directory, template_file)
+        end
       end
     end
   end
