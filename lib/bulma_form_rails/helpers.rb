@@ -1,7 +1,7 @@
 require 'rexml/document'
 
 # rdoc-image:images/moderngeosystems_logo.png
-module BulmaForm
+module BulmaFormRails
 
   # rdoc-image:../images/moderngeosystems_logo.png
   # 

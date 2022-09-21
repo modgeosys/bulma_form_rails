@@ -31,7 +31,7 @@ class SampleModel
   end
 end
 
-module BulmaForm
+module BulmaFormRails
   class Railtie
     @@child_attributes = {sample_model: ['name', 'number']}
     @@bulma_form_initializer.call

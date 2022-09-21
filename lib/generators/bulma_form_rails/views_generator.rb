@@ -2,7 +2,7 @@
 
 require 'rails/generators'
 
-module BulmaForm
+module BulmaFormRails
   module Generators
     class ViewsGenerator < Rails::Generators::Base
       source_root File.expand_path('../../bulma_form_rails/views', __FILE__)

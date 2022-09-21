@@ -2,7 +2,7 @@ require File.expand_path('lib/bulma_form_rails/version', __dir__)
 
 Gem::Specification.new do |spec|
   spec.name = 'bulma_form_rails'
-  spec.version = BulmaForm::VERSION
+  spec.version = BulmaFormRails::VERSION
   spec.authors = ['Kevin Weller']
   spec.email = ['kweller@moderngeosystems.com']
   spec.summary = 'Rails helpers for efficiently building forms with the Bulma CSS library'

@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "~> 3.1.2"
 
-# Declare your gem's dependencies in bulma_form.gemspec.
+# Declare your gem's dependencies in bulma_form_rails.gemspec.
 # Bundler will treat runtime dependencies like base dependencies, and
 # development dependencies will be added by default to the :development group.
 gemspec

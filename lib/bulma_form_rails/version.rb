@@ -1,3 +1,3 @@
-module BulmaForm
+module BulmaFormRails
   VERSION = '0.9.1'
 end

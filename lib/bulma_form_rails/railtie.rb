@@ -1,6 +1,6 @@
 require 'bulma_form_rails/helpers'
 
-module BulmaForm
+module BulmaFormRails
   class Railtie < Rails::Railtie
     railtie_name :bulma_form_rails
     

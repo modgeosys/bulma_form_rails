@@ -1,4 +1,4 @@
-module BulmaForm
+module BulmaFormRails
   module Helper
     # Renders a child objects collection management UI,
     # including row addition and deletion buttons by default.
