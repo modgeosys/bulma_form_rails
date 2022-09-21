@@ -22,14 +22,14 @@ module BulmaFormRails
     #   * +container+ - a string representing an array index expression for a row if not a single index, eg:
     #                   "[related_reservations][#{related_reservation_counter}]"
     def bulma_child_objects(collection, name, attributes_key, add_child_path, options = {})
-      render partial: '/children', object: collection, locals: {url: add_child_path, name: name, attributes_key: attributes_key}.merge(options)
+      render partial: 'bulma_form_rails/children', object: collection, locals: {url: add_child_path, name: name, attributes_key: attributes_key}.merge(options)
     end
     
     # Render the header for a standard index page.  Automatically calls +bulma_message_box+.
     # * +name+ - a symbol representing the model name
     # * +models_path+ - the controller URL path for the action that renders the model collection
     def bulma_index_header(name, models_path)
-      render partial: '/bulma_index_header', locals: {name: name, models_path: models_path}
+      render partial: 'bulma_form_rails/index_header', locals: {name: name, models_path: models_path}
     end
   
     # Render a standard model creation form page.
@@ -37,7 +37,7 @@ module BulmaFormRails
     # * +model+ - the model object
     # * +models_path+ - the controller URL path for the action that renders the model collection
     def bulma_new_form_page(name, model, models_path)
-      render partial: '/bulma_new_form_page', locals: {name: name, model: model, models_path: models_path}
+      render partial: 'bulma_form_rails/new_form_page', locals: {name: name, model: model, models_path: models_path}
     end
   
     # Render a standard model edit form page.
@@ -46,18 +46,18 @@ module BulmaFormRails
     # * +models_path+ - the controller URL path for the action that renders the model collection
     # * +model_path+ - the controller URL path for the action that renders this individual model
     def bulma_edit_form_page(name, model, models_path, model_path)
-      render partial: '/bulma_edit_form_page', locals: {name: name, model: model, models_path: models_path, model_path: model_path}
+      render partial: 'bulma_form_rails/edit_form_page', locals: {name: name, model: model, models_path: models_path, model_path: model_path}
     end
   
     # Render a standard flash messages box.  Automatically included with +bulma_validation_box+ and +bulma_index_header+ output.
     def bulma_message_box
-      render partial: '/bulma_message_box'
+      render partial: 'bulma_form_rails/message_box'
     end
   
     # Render a standard model validation messages box.  Automatically calls +bulma_message_box+.
     # * +model+ - the model object
     def bulma_validation_box(model)
-      render partial: '/bulma_validation_box', locals: {model: model}
+      render partial: 'bulma_form_rails/validation_box', locals: {model: model}
     end
     
     # Render a standard model form page footer.
@@ -68,9 +68,9 @@ module BulmaFormRails
     # * +block+ - optional ERb to render any additional content for the footer, such as additional buttons
     def bulma_form_footer(form, models_path, options = {}, &block)
       if block_given?
-        render layout: '/bulma_form_footer', locals: {form: form, url: models_path, options: options}, &block
+        render layout: 'bulma_form_rails/form_footer', locals: {form: form, url: models_path, options: options}, &block
       else
-        render partial: '/bulma_form_footer', locals: {form: form, url: models_path, options: options}
+        render partial: 'bulma_form_rails/form_footer', locals: {form: form, url: models_path, options: options}
       end 
       
     end
@@ -88,7 +88,7 @@ module BulmaFormRails
       render_parameters.merge!(additional_field_label_classes: 'is-normal') unless options[:contains_check_box_or_radio_group]
   
       # Render the labeled field.
-      render layout: '/bulma_field', locals: render_parameters, &block
+      render layout: 'bulma_form_rails/field', locals: render_parameters, &block
     end
   
     VALID_INPUT_TYPES = %i[color date datetime_local email file hidden month number password phone telephone text time url]
@@ -114,8 +114,8 @@ module BulmaFormRails
       additional_render_parameters = %i[date_field datetime_local_field month_field time_field].any?(method) ? {additional_field_classes: 'is-narrow'} : {}
   
       # Render the labeled field.
-      render layout: '/bulma_field', locals: render_parameters.merge(additional_field_label_classes: 'is-normal') do
-        render partial: '/bulma_value', locals: render_parameters.merge(method: method).merge(additional_render_parameters)
+      render layout: 'bulma_form_rails/field', locals: render_parameters.merge(additional_field_label_classes: 'is-normal') do
+        render partial: 'bulma_form_rails/value', locals: render_parameters.merge(method: method).merge(additional_render_parameters)
       end 
     end
     
@@ -133,8 +133,8 @@ module BulmaFormRails
       render_parameters = prepare_common_parameters(field_name, form_or_object, options)
   
       # Render the labeled field.
-      render layout: '/bulma_field', locals: render_parameters.merge(additional_field_label_classes: 'is-normal') do
-        render partial: '/bulma_value', locals: render_parameters.merge(method: :text_area)
+      render layout: 'bulma_form_rails/field', locals: render_parameters.merge(additional_field_label_classes: 'is-normal') do
+        render partial: 'bulma_form_rails/value', locals: render_parameters.merge(method: :text_area)
       end
     end
     
@@ -150,8 +150,8 @@ module BulmaFormRails
       render_parameters = prepare_common_parameters(field_name, form_or_object, options)
   
       # Render the labeled field.
-      render layout: '/bulma_field', locals: render_parameters do
-        render partial: '/bulma_value', locals: render_parameters.merge(method: :check_box, additional_field_classes: 'is-narrow')
+      render layout: 'bulma_form_rails/field', locals: render_parameters do
+        render partial: 'bulma_form_rails/value', locals: render_parameters.merge(method: :check_box, additional_field_classes: 'is-narrow')
       end
     end
   
@@ -168,8 +168,8 @@ module BulmaFormRails
       render_parameters = prepare_common_parameters(field_name, form_or_object, options)
   
       # Render the labeled field.
-      render layout: '/bulma_field', locals: render_parameters do
-        render partial: '/bulma_radio_group', locals: render_parameters.merge(choices: choices)
+      render layout: 'bulma_form_rails/field', locals: render_parameters do
+        render partial: 'bulma_form_rails/radio_group', locals: render_parameters.merge(choices: choices)
       end
     end
   
@@ -187,8 +187,8 @@ module BulmaFormRails
       render_parameters = prepare_common_parameters(field_name, form_or_object, options)
   
       # Render the labeled field.
-      render layout: '/bulma_field', locals: render_parameters.merge(additional_field_label_classes: 'is-normal') do
-        render partial: '/bulma_select', locals: render_parameters.merge(choices: choices, html_options: html_options)
+      render layout: 'bulma_form_rails/field', locals: render_parameters.merge(additional_field_label_classes: 'is-normal') do
+        render partial: 'bulma_form_rails/select', locals: render_parameters.merge(choices: choices, html_options: html_options)
       end
     end
   
@@ -205,8 +205,8 @@ module BulmaFormRails
       render_parameters = prepare_common_parameters(field_name, form_or_object, options)
   
       # Render the labeled field.
-      render layout: '/bulma_field', locals: render_parameters.merge(additional_field_label_classes: 'is-normal') do
-        render partial: '/bulma_datetime_select', locals: render_parameters.merge(html_options: html_options)
+      render layout: 'bulma_form_rails/field', locals: render_parameters.merge(additional_field_label_classes: 'is-normal') do
+        render partial: 'bulma_form_rails/datetime_select', locals: render_parameters.merge(html_options: html_options)
       end
     end
   
@@ -223,8 +223,8 @@ module BulmaFormRails
       render_parameters = prepare_common_parameters(field_name, form_or_object, options)
   
       # Render the labeled field.
-      render layout: '/bulma_field', locals: render_parameters.merge(additional_field_label_classes: 'is-normal') do
-        render partial: '/bulma_time_select', locals: render_parameters.merge(html_options: html_options)
+      render layout: 'bulma_form_rails/field', locals: render_parameters.merge(additional_field_label_classes: 'is-normal') do
+        render partial: 'bulma_form_rails/time_select', locals: render_parameters.merge(html_options: html_options)
       end
     end
   
