@@ -40,7 +40,7 @@
             <% end %>
             <th class="has-background-primary has-text-white"></th>
           </tr>
-          <%= render partial: '/child', collection: children, locals: { name: name, container: container, attributes: attributes, last: false, system_controlled: system_controlled, totals: totals, attributes_key: attributes_key, form_id: form_id } %>
+          <%= render partial: 'bulma_form_rails/child', collection: children, locals: { name: name, container: container, attributes: attributes, last: false, system_controlled: system_controlled, totals: totals, attributes_key: attributes_key, form_id: form_id } %>
           <% unless total_columns.empty? %>
             <tr>
               <% totals.each do |total| %>
@@ -51,7 +51,7 @@
             </tr>
           <% end %>
           <% unless system_controlled %>
-            <%= render partial: '/child', locals: { child: eval("#{name.capitalize.gsub(/_(.)/) {|s| $1.capitalize}}.new"), container: container, child_counter: children.size, name: name, attributes: attributes, attributes_key: attributes_key, form_id: form_id, last: true, system_controlled: false } %>
+            <%= render partial: 'bulma_form_rails/child', locals: { child: eval("#{name.capitalize.gsub(/_(.)/) {|s| $1.capitalize}}.new"), container: container, child_counter: children.size, name: name, attributes: attributes, attributes_key: attributes_key, form_id: form_id, last: true, system_controlled: false } %>
           <% end %>
           </tbody>
         </table>
