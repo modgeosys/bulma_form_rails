@@ -32,7 +32,7 @@ module BulmaFormRails
               respond_to do |format|
                 format.turbo_stream do
                   render turbo_stream: turbo_stream.append("#{@name}-table",
-                                                           partial: '/child',
+                                                           partial: 'bulma_form_rails/child',
                                                            locals: {child: eval("#{@name.capitalize.gsub(/_(.)/) {|s| $1.capitalize }}.new"), child_counter: @size, name: @name, attributes: @attributes, attributes_key: @attributes_key, last: true, container: '', system_controlled: false})
                 end
               end
@@ -49,6 +49,6 @@ module BulmaFormRails
       end
     end
     
-    ActiveSupport.on_load(:action_view, &@@bulma_form_initializer)
+    ActiveSupport.on_load(:action_controller, &@@bulma_form_initializer)
   end
 end
