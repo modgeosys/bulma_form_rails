@@ -21,6 +21,9 @@ module BulmaFormRails
     #                       [3, 4]
     #   * +container+ - a string representing an array index expression for a row if not a single index, eg:
     #                   "[related_reservations][#{related_reservation_counter}]"
+    # To use this helper method, you will first need to do the following:
+    # 1. Call <tt>bulma_child_forms</tt> from the specific controller (but outside any existing method definitions) for your view, passing in a hash of the object collections to be managed along with their attributes, for example, <tt>{object1: %w[attr1 attr2], object2: %w[attr3 attr4]}</tt>.
+    # 2. Add a route to the <tt>add_child</tt> action for the same controller, for example, <tt>put 'users/add_child', to: 'users#add_child'</tt>. 
     def bulma_child_objects(collection, name, attributes_key, add_child_path, options = {})
       render partial: 'bulma_form_rails/children', object: collection, locals: {url: add_child_path, name: name, attributes_key: attributes_key}.merge(options)
     end

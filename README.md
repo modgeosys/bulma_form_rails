@@ -43,6 +43,8 @@ $ rails bulma_form_rails:install
 ```
 `rails bulma_form_rails:install` will add required resources to your application.
 
+Then manually `include Pagy::Backend` in your ApplicationController definition and `include Pagy::Frontend` in your ApplicationHelper module definition.
+
 ## Examples
 (for a hypothetical user management UI)
 

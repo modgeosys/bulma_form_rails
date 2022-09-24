@@ -9,7 +9,7 @@ module BulmaFormRails
       Dir.glob("#{path}/../tasks/**/*.rake").each {|f| load f}
     end
     
-    VIEW_PATH = 'lib/templates/views'
+    VIEW_PATH = 'lib/templates/app/views'
     
     @@bulma_form_initializer = Proc.new do
       ActionView::Helpers.send :include, Helpers
