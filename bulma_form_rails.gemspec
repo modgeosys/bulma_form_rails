@@ -32,4 +32,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'debug', '~> 1.6.2'
   spec.add_development_dependency 'rbs_rails', '~> 0.11.0'
   spec.add_development_dependency 'rdoc', '~> 6.4.0'
+  spec.add_development_dependency 'minitest', '~> 5.0'
 end
