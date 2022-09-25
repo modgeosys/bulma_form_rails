@@ -1,12 +1,10 @@
 require 'rexml/document'
 
-# rdoc-image:images/moderngeosystems_logo.png
 module BulmaFormRails
 
   # rdoc-image:../images/moderngeosystems_logo.png
   # 
-  # This Ruby on Rails Helper module allows easy and efficient web form construction with labeled fields of different types.
-  # It also supports tabular editable multi-object subforms. 
+  # This Ruby on Rails Helper module allows easy and efficient index and form page header and footer rendering.
   module HeaderAndFooterHelpers
     
     # Render the header for a standard index page.  Automatically calls +bulma_message_box+.

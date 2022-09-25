@@ -1,12 +1,10 @@
 require 'rexml/document'
 
-# rdoc-image:images/moderngeosystems_logo.png
 module BulmaFormRails
 
   # rdoc-image:../images/moderngeosystems_logo.png
   # 
   # This Ruby on Rails Helper module allows easy and efficient web form construction with labeled fields of different types.
-  # It also supports tabular editable multi-object subforms. 
   module FieldHelpers
     
     # Render a labeled field with custom content.

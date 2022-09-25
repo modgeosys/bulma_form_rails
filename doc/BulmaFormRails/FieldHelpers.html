@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>module BulmaFormRails::Helpers - RDoc Documentation</title>
+<title>module BulmaFormRails::FieldHelpers - RDoc Documentation</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "../";
@@ -67,36 +67,29 @@
 
   <ul class="link-list" role="directory">
     <li ><a href="#method-i-bulma_check_box">#bulma_check_box</a>
-    <li ><a href="#method-i-bulma_child_objects">#bulma_child_objects</a>
     <li ><a href="#method-i-bulma_custom_field">#bulma_custom_field</a>
     <li ><a href="#method-i-bulma_datetime_select">#bulma_datetime_select</a>
-    <li ><a href="#method-i-bulma_edit_form_page">#bulma_edit_form_page</a>
-    <li ><a href="#method-i-bulma_form_footer">#bulma_form_footer</a>
-    <li ><a href="#method-i-bulma_index_header">#bulma_index_header</a>
     <li ><a href="#method-i-bulma_input">#bulma_input</a>
-    <li ><a href="#method-i-bulma_message_box">#bulma_message_box</a>
-    <li ><a href="#method-i-bulma_new_form_page">#bulma_new_form_page</a>
     <li ><a href="#method-i-bulma_radio_group">#bulma_radio_group</a>
     <li ><a href="#method-i-bulma_select">#bulma_select</a>
     <li ><a href="#method-i-bulma_text_area">#bulma_text_area</a>
     <li ><a href="#method-i-bulma_time_select">#bulma_time_select</a>
-    <li ><a href="#method-i-bulma_validation_box">#bulma_validation_box</a>
   </ul>
 </div>
 
   </div>
 </nav>
 
-<main role="main" aria-labelledby="module-BulmaFormRails::Helpers">
-  <h1 id="module-BulmaFormRails::Helpers" class="module">
-    module BulmaFormRails::Helpers
+<main role="main" aria-labelledby="module-BulmaFormRails::FieldHelpers">
+  <h1 id="module-BulmaFormRails::FieldHelpers" class="module">
+    module BulmaFormRails::FieldHelpers
   </h1>
 
   <section class="description">
     
 <p><img src="../images/moderngeosystems_logo.png"></p>
 
-<p>This Ruby on Rails Helper module allows easy and efficient web form construction with labeled fields of different types. It also supports tabular editable multi-object subforms.</p>
+<p>This Ruby on Rails Helper module allows easy and efficient web form construction with labeled fields of different types.</p>
 
   </section>
 
@@ -143,7 +136,7 @@
 </li></ul>
 
           <div class="method-source-code" id="bulma_check_box-source">
-            <pre><span class="ruby-comment"># File lib/bulma_form_rails/helpers.rb, line 150</span>
+            <pre><span class="ruby-comment"># File lib/bulma_form_rails/field_helpers.rb, line 79</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bulma_check_box</span>(<span class="ruby-identifier">form_or_object</span>, <span class="ruby-identifier">field_name</span>, <span class="ruby-identifier">options</span> = {})
   <span class="ruby-comment"># Prepare parameters.</span>
   <span class="ruby-identifier">prepare_value_class!</span>(<span class="ruby-identifier">options</span>, <span class="ruby-value">base_class:</span> <span class="ruby-string">&#39;checkbox&#39;</span>)
@@ -153,61 +146,6 @@
   <span class="ruby-identifier">render</span> <span class="ruby-value">layout:</span> <span class="ruby-string">&#39;bulma_form_rails/field&#39;</span>, <span class="ruby-value">locals:</span> <span class="ruby-identifier">render_parameters</span> <span class="ruby-keyword">do</span>
     <span class="ruby-identifier">render</span> <span class="ruby-value">partial:</span> <span class="ruby-string">&#39;bulma_form_rails/value&#39;</span>, <span class="ruby-value">locals:</span> <span class="ruby-identifier">render_parameters</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">method:</span> <span class="ruby-value">:check_box</span>, <span class="ruby-value">additional_field_classes:</span> <span class="ruby-string">&#39;is-narrow&#39;</span>)
   <span class="ruby-keyword">end</span>
-<span class="ruby-keyword">end</span></pre>
-          </div>
-        </div>
-
-
-      </div>
-
-      <div id="method-i-bulma_child_objects" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">bulma_child_objects</span><span
-            class="method-args">(collection, name, attributes_key, add_child_path, options = {})</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-
-        <div class="method-description">
-          <p>Renders a child objects collection management UI subform, including row addition and deletion buttons by default.</p>
-<ul><li>
-<p><code>collection</code> - an array of serializable objects</p>
-</li><li>
-<p><code>name</code> - the lower-case singular name of the object for display purposes</p>
-</li><li>
-<p><code>attributes_key</code> - a symbolic key into the attribute reference hash retrievable via the <code>lookup_attributes(key)</code> method defined on the controller as a <code>helper_method</code>, eg <code>:object</code> for:</p>
-
-<pre class="ruby">{<span class="ruby-value">object:</span> [<span class="ruby-string">&quot;attribute_1&quot;</span>, <span class="ruby-string">&quot;attribute_2&quot;</span>]}
-</pre>
-</li><li>
-<p><code>add_child_path</code> - the controller URL path for the action to add a child object to the collection</p>
-</li><li>
-<p><code>options</code> - a hash of additional options to pass to the partials</p>
-<ul><li>
-<p><code>system_controlled</code> - <code>true</code> if you want no row add or delete buttons, <code>false</code> or unspecified if you do want add and delete buttons</p>
-</li><li>
-<p><code>total_columns</code> - an array of integers representing column numbers requiring arithmetic totals at the bottom of the subform, eg:</p>
-
-<pre class="ruby">[<span class="ruby-value">3</span>, <span class="ruby-value">4</span>]
-</pre>
-</li><li>
-<p><code>container</code> - a string representing an array index expression for a row if not a single index, eg:</p>
-
-<pre class="ruby"><span class="ruby-node">&quot;[related_reservations][#{related_reservation_counter}]&quot;</span>
-</pre>
-</li></ul>
-</li></ul>
-
-<p>To use this helper method, you will first need to do the following:</p>
-<ol><li>
-<p>Call <code>bulma_child_forms</code> from the specific controller (but outside any existing method definitions) for your view, passing in a hash of the object collections to be managed along with their attributes, for example, <code>{object1: %w[attr1 attr2], object2: %w[attr3 attr4]}</code>.</p>
-</li><li>
-<p>Add a route to the <code>add_child</code> action for the same controller, for example, <code>put &#39;users/add_child&#39;, to: &#39;users#add_child&#39;</code>.</p>
-</li></ol>
-
-          <div class="method-source-code" id="bulma_child_objects-source">
-            <pre><span class="ruby-comment"># File lib/bulma_form_rails/helpers.rb, line 27</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bulma_child_objects</span>(<span class="ruby-identifier">collection</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">attributes_key</span>, <span class="ruby-identifier">add_child_path</span>, <span class="ruby-identifier">options</span> = {})
-  <span class="ruby-identifier">render</span> <span class="ruby-value">partial:</span> <span class="ruby-string">&#39;bulma_form_rails/children&#39;</span>, <span class="ruby-value">object:</span> <span class="ruby-identifier">collection</span>, <span class="ruby-value">locals:</span> {<span class="ruby-value">url:</span> <span class="ruby-identifier">add_child_path</span>, <span class="ruby-value">name:</span> <span class="ruby-identifier">name</span>, <span class="ruby-value">attributes_key:</span> <span class="ruby-identifier">attributes_key</span>}.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">options</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>
@@ -238,7 +176,7 @@
 </li></ul>
 
           <div class="method-source-code" id="bulma_custom_field-source">
-            <pre><span class="ruby-comment"># File lib/bulma_form_rails/helpers.rb, line 87</span>
+            <pre><span class="ruby-comment"># File lib/bulma_form_rails/field_helpers.rb, line 16</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bulma_custom_field</span>(<span class="ruby-identifier">form_or_object</span>, <span class="ruby-identifier">field_name</span>, <span class="ruby-identifier">options</span> = {}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-comment"># Prepare parameters.</span>
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;No block given for custom field&#39;</span>) <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">block_given?</span>
@@ -279,7 +217,7 @@
 </li></ul>
 
           <div class="method-source-code" id="bulma_datetime_select-source">
-            <pre><span class="ruby-comment"># File lib/bulma_form_rails/helpers.rb, line 205</span>
+            <pre><span class="ruby-comment"># File lib/bulma_form_rails/field_helpers.rb, line 134</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bulma_datetime_select</span>(<span class="ruby-identifier">form_or_object</span>, <span class="ruby-identifier">field_name</span>, <span class="ruby-identifier">options</span> = {}, <span class="ruby-identifier">html_options</span> = {})
   <span class="ruby-comment"># Prepare parameters.</span>
   <span class="ruby-identifier">prepare_value_class!</span>(<span class="ruby-identifier">options</span>, <span class="ruby-value">base_class:</span> <span class="ruby-string">&#39;select is-fullwidth&#39;</span>)
@@ -289,100 +227,6 @@
   <span class="ruby-identifier">render</span> <span class="ruby-value">layout:</span> <span class="ruby-string">&#39;bulma_form_rails/field&#39;</span>, <span class="ruby-value">locals:</span> <span class="ruby-identifier">render_parameters</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">additional_field_label_classes:</span> <span class="ruby-string">&#39;is-normal&#39;</span>) <span class="ruby-keyword">do</span>
     <span class="ruby-identifier">render</span> <span class="ruby-value">partial:</span> <span class="ruby-string">&#39;bulma_form_rails/datetime_select&#39;</span>, <span class="ruby-value">locals:</span> <span class="ruby-identifier">render_parameters</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">html_options:</span> <span class="ruby-identifier">html_options</span>)
   <span class="ruby-keyword">end</span>
-<span class="ruby-keyword">end</span></pre>
-          </div>
-        </div>
-
-
-      </div>
-
-      <div id="method-i-bulma_edit_form_page" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">bulma_edit_form_page</span><span
-            class="method-args">(name, model, models_path, model_path)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-
-        <div class="method-description">
-          <p>Render a standard model edit form page.</p>
-<ul><li>
-<p><code>name</code> - a symbol representing the model name</p>
-</li><li>
-<p><code>model</code> - the model object</p>
-</li><li>
-<p><code>models_path</code> - the controller URL path for the action that renders the model collection</p>
-</li><li>
-<p><code>model_path</code> - the controller URL path for the action that renders this individual model</p>
-</li></ul>
-
-          <div class="method-source-code" id="bulma_edit_form_page-source">
-            <pre><span class="ruby-comment"># File lib/bulma_form_rails/helpers.rb, line 51</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bulma_edit_form_page</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">model</span>, <span class="ruby-identifier">models_path</span>, <span class="ruby-identifier">model_path</span>)
-  <span class="ruby-identifier">render</span> <span class="ruby-value">partial:</span> <span class="ruby-string">&#39;bulma_form_rails/edit_form_page&#39;</span>, <span class="ruby-value">locals:</span> {<span class="ruby-value">name:</span> <span class="ruby-identifier">name</span>, <span class="ruby-value">model:</span> <span class="ruby-identifier">model</span>, <span class="ruby-value">models_path:</span> <span class="ruby-identifier">models_path</span>, <span class="ruby-value">model_path:</span> <span class="ruby-identifier">model_path</span>}
-<span class="ruby-keyword">end</span></pre>
-          </div>
-        </div>
-
-
-      </div>
-
-      <div id="method-i-bulma_form_footer" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">bulma_form_footer</span><span
-            class="method-args">(form, models_path, options = {}, &amp;block)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-
-        <div class="method-description">
-          <p>Render a standard model form page footer.</p>
-<ul><li>
-<p><code>form</code> - the form object</p>
-</li><li>
-<p><code>models_path</code> - the controller URL path for the action that renders the model collection</p>
-</li><li>
-<p><code>options</code> - a hash of additional options:</p>
-<ul><li>
-<p><code>exclude_submit_button</code> - don’t include a submit button if true</p>
-</li></ul>
-</li><li>
-<p><code>block</code> - optional ERb to render any additional content for the footer, such as additional buttons</p>
-</li></ul>
-
-          <div class="method-source-code" id="bulma_form_footer-source">
-            <pre><span class="ruby-comment"># File lib/bulma_form_rails/helpers.rb, line 72</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bulma_form_footer</span>(<span class="ruby-identifier">form</span>, <span class="ruby-identifier">models_path</span>, <span class="ruby-identifier">options</span> = {}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
-  <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
-    <span class="ruby-identifier">render</span> <span class="ruby-value">layout:</span> <span class="ruby-string">&#39;bulma_form_rails/form_footer&#39;</span>, <span class="ruby-value">locals:</span> {<span class="ruby-value">form:</span> <span class="ruby-identifier">form</span>, <span class="ruby-value">url:</span> <span class="ruby-identifier">models_path</span>, <span class="ruby-value">options:</span> <span class="ruby-identifier">options</span>}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>
-  <span class="ruby-keyword">else</span>
-    <span class="ruby-identifier">render</span> <span class="ruby-value">partial:</span> <span class="ruby-string">&#39;bulma_form_rails/form_footer&#39;</span>, <span class="ruby-value">locals:</span> {<span class="ruby-value">form:</span> <span class="ruby-identifier">form</span>, <span class="ruby-value">url:</span> <span class="ruby-identifier">models_path</span>, <span class="ruby-value">options:</span> <span class="ruby-identifier">options</span>}
-  <span class="ruby-keyword">end</span> 
-  
-<span class="ruby-keyword">end</span></pre>
-          </div>
-        </div>
-
-
-      </div>
-
-      <div id="method-i-bulma_index_header" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">bulma_index_header</span><span
-            class="method-args">(name, models_path)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-
-        <div class="method-description">
-          <p>Render the header for a standard index page.  Automatically calls <code>bulma_message_box</code>.</p>
-<ul><li>
-<p><code>name</code> - a symbol representing the model name</p>
-</li><li>
-<p><code>models_path</code> - the controller URL path for the action that renders the model collection</p>
-</li></ul>
-
-          <div class="method-source-code" id="bulma_index_header-source">
-            <pre><span class="ruby-comment"># File lib/bulma_form_rails/helpers.rb, line 34</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bulma_index_header</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">models_path</span>)
-  <span class="ruby-identifier">render</span> <span class="ruby-value">partial:</span> <span class="ruby-string">&#39;bulma_form_rails/index_header&#39;</span>, <span class="ruby-value">locals:</span> {<span class="ruby-value">name:</span> <span class="ruby-identifier">name</span>, <span class="ruby-value">models_path:</span> <span class="ruby-identifier">models_path</span>}
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>
@@ -415,7 +259,7 @@
 </li></ul>
 
           <div class="method-source-code" id="bulma_input-source">
-            <pre><span class="ruby-comment"># File lib/bulma_form_rails/helpers.rb, line 107</span>
+            <pre><span class="ruby-comment"># File lib/bulma_form_rails/field_helpers.rb, line 36</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bulma_input</span>(<span class="ruby-identifier">form_or_object</span>, <span class="ruby-identifier">field_name</span>, <span class="ruby-identifier">type</span> = <span class="ruby-value">:text</span>, <span class="ruby-identifier">options</span> = {})
   <span class="ruby-comment"># Convert type to form method.</span>
   <span class="ruby-identifier">type</span> = <span class="ruby-identifier">type</span>.<span class="ruby-identifier">to_s</span>
@@ -432,55 +276,6 @@
   <span class="ruby-identifier">render</span> <span class="ruby-value">layout:</span> <span class="ruby-string">&#39;bulma_form_rails/field&#39;</span>, <span class="ruby-value">locals:</span> <span class="ruby-identifier">render_parameters</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">additional_field_label_classes:</span> <span class="ruby-string">&#39;is-normal&#39;</span>) <span class="ruby-keyword">do</span>
     <span class="ruby-identifier">render</span> <span class="ruby-value">partial:</span> <span class="ruby-string">&#39;bulma_form_rails/value&#39;</span>, <span class="ruby-value">locals:</span> <span class="ruby-identifier">render_parameters</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">method:</span> <span class="ruby-identifier">method</span>).<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">additional_render_parameters</span>)
   <span class="ruby-keyword">end</span> 
-<span class="ruby-keyword">end</span></pre>
-          </div>
-        </div>
-
-
-      </div>
-
-      <div id="method-i-bulma_message_box" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">bulma_message_box</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-
-        <div class="method-description">
-          <p>Render a standard flash messages box.  Automatically included with <code>bulma_validation_box</code> and <code>bulma_index_header</code> output.</p>
-
-          <div class="method-source-code" id="bulma_message_box-source">
-            <pre><span class="ruby-comment"># File lib/bulma_form_rails/helpers.rb, line 56</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bulma_message_box</span>
-  <span class="ruby-identifier">render</span> <span class="ruby-value">partial:</span> <span class="ruby-string">&#39;bulma_form_rails/message_box&#39;</span>
-<span class="ruby-keyword">end</span></pre>
-          </div>
-        </div>
-
-
-      </div>
-
-      <div id="method-i-bulma_new_form_page" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">bulma_new_form_page</span><span
-            class="method-args">(name, model, models_path)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-
-        <div class="method-description">
-          <p>Render a standard model creation form page.</p>
-<ul><li>
-<p><code>name</code> - a symbol representing the model name</p>
-</li><li>
-<p><code>model</code> - the model object</p>
-</li><li>
-<p><code>models_path</code> - the controller URL path for the action that renders the model collection</p>
-</li></ul>
-
-          <div class="method-source-code" id="bulma_new_form_page-source">
-            <pre><span class="ruby-comment"># File lib/bulma_form_rails/helpers.rb, line 42</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bulma_new_form_page</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">model</span>, <span class="ruby-identifier">models_path</span>)
-  <span class="ruby-identifier">render</span> <span class="ruby-value">partial:</span> <span class="ruby-string">&#39;bulma_form_rails/new_form_page&#39;</span>, <span class="ruby-value">locals:</span> {<span class="ruby-value">name:</span> <span class="ruby-identifier">name</span>, <span class="ruby-value">model:</span> <span class="ruby-identifier">model</span>, <span class="ruby-value">models_path:</span> <span class="ruby-identifier">models_path</span>}
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>
@@ -513,7 +308,7 @@
 </li></ul>
 
           <div class="method-source-code" id="bulma_radio_group-source">
-            <pre><span class="ruby-comment"># File lib/bulma_form_rails/helpers.rb, line 168</span>
+            <pre><span class="ruby-comment"># File lib/bulma_form_rails/field_helpers.rb, line 97</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bulma_radio_group</span>(<span class="ruby-identifier">form_or_object</span>, <span class="ruby-identifier">field_name</span>, <span class="ruby-identifier">choices</span>, <span class="ruby-identifier">options</span> = {})
   <span class="ruby-comment"># Prepare parameters.</span>
   <span class="ruby-identifier">prepare_value_class!</span>(<span class="ruby-identifier">options</span>, <span class="ruby-value">base_class:</span> <span class="ruby-string">&#39;radio&#39;</span>)
@@ -557,7 +352,7 @@
 </li></ul>
 
           <div class="method-source-code" id="bulma_select-source">
-            <pre><span class="ruby-comment"># File lib/bulma_form_rails/helpers.rb, line 187</span>
+            <pre><span class="ruby-comment"># File lib/bulma_form_rails/field_helpers.rb, line 116</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bulma_select</span>(<span class="ruby-identifier">form_or_object</span>, <span class="ruby-identifier">field_name</span>, <span class="ruby-identifier">choices</span>, <span class="ruby-identifier">options</span> = {}, <span class="ruby-identifier">html_options</span> = {})
   <span class="ruby-comment"># Prepare parameters.</span>
   <span class="ruby-identifier">prepare_value_class!</span>(<span class="ruby-identifier">options</span>, <span class="ruby-value">base_class:</span> <span class="ruby-string">&#39;select is-fullwidth&#39;</span>)
@@ -601,7 +396,7 @@
 </li></ul>
 
           <div class="method-source-code" id="bulma_text_area-source">
-            <pre><span class="ruby-comment"># File lib/bulma_form_rails/helpers.rb, line 133</span>
+            <pre><span class="ruby-comment"># File lib/bulma_form_rails/field_helpers.rb, line 62</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bulma_text_area</span>(<span class="ruby-identifier">form_or_object</span>, <span class="ruby-identifier">field_name</span>, <span class="ruby-identifier">options</span> = {})
   <span class="ruby-comment"># Prepare parameters.</span>
   <span class="ruby-identifier">prepare_value_class!</span>(<span class="ruby-identifier">options</span>, <span class="ruby-value">base_class:</span> <span class="ruby-string">&#39;textarea&#39;</span>)
@@ -643,7 +438,7 @@
 </li></ul>
 
           <div class="method-source-code" id="bulma_time_select-source">
-            <pre><span class="ruby-comment"># File lib/bulma_form_rails/helpers.rb, line 223</span>
+            <pre><span class="ruby-comment"># File lib/bulma_form_rails/field_helpers.rb, line 152</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bulma_time_select</span>(<span class="ruby-identifier">form_or_object</span>, <span class="ruby-identifier">field_name</span>, <span class="ruby-identifier">options</span> = {}, <span class="ruby-identifier">html_options</span> = {})
   <span class="ruby-comment"># Prepare parameters.</span>
   <span class="ruby-identifier">prepare_value_class!</span>(<span class="ruby-identifier">options</span>, <span class="ruby-value">base_class:</span> <span class="ruby-string">&#39;select is-fullwidth&#39;</span>)
@@ -653,30 +448,6 @@
   <span class="ruby-identifier">render</span> <span class="ruby-value">layout:</span> <span class="ruby-string">&#39;bulma_form_rails/field&#39;</span>, <span class="ruby-value">locals:</span> <span class="ruby-identifier">render_parameters</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">additional_field_label_classes:</span> <span class="ruby-string">&#39;is-normal&#39;</span>) <span class="ruby-keyword">do</span>
     <span class="ruby-identifier">render</span> <span class="ruby-value">partial:</span> <span class="ruby-string">&#39;bulma_form_rails/time_select&#39;</span>, <span class="ruby-value">locals:</span> <span class="ruby-identifier">render_parameters</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">html_options:</span> <span class="ruby-identifier">html_options</span>)
   <span class="ruby-keyword">end</span>
-<span class="ruby-keyword">end</span></pre>
-          </div>
-        </div>
-
-
-      </div>
-
-      <div id="method-i-bulma_validation_box" class="method-detail ">
-        <div class="method-heading">
-          <span class="method-name">bulma_validation_box</span><span
-            class="method-args">(model)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-
-        <div class="method-description">
-          <p>Render a standard model validation messages box.  Automatically calls <code>bulma_message_box</code>.</p>
-<ul><li>
-<p><code>model</code> - the model object</p>
-</li></ul>
-
-          <div class="method-source-code" id="bulma_validation_box-source">
-            <pre><span class="ruby-comment"># File lib/bulma_form_rails/helpers.rb, line 62</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bulma_validation_box</span>(<span class="ruby-identifier">model</span>)
-  <span class="ruby-identifier">render</span> <span class="ruby-value">partial:</span> <span class="ruby-string">&#39;bulma_form_rails/validation_box&#39;</span>, <span class="ruby-value">locals:</span> {<span class="ruby-value">model:</span> <span class="ruby-identifier">model</span>}
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>
