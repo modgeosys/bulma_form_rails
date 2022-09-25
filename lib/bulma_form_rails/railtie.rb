@@ -1,4 +1,8 @@
-require 'bulma_form_rails/helpers'
+require 'bulma_form_rails/field_helpers'
+require 'bulma_form_rails/form_page_helpers'
+require 'bulma_form_rails/header_and_footer_helpers'
+require 'bulma_form_rails/message_box_helpers'
+require 'bulma_form_rails/subform_helpers'
 
 module BulmaFormRails
   class Railtie < Rails::Railtie
@@ -6,13 +10,17 @@ module BulmaFormRails
     
     rake_tasks do
       path = File.expand_path(__dir__)
-      Dir.glob("#{path}/../tasks/**/*.rake").each {|f| load f}
+      Dir.glob("#{path}/../tasks/**/*.rake").each {|filename| load filename}
     end
     
     VIEW_PATH = 'lib/templates/app/views'
     
     @@bulma_form_initializer = Proc.new do
-      ActionView::Helpers.send :include, Helpers
+      ActionView::Helpers.send :include, FieldHelpers
+      ActionView::Helpers.send :include, FormPageHelpers
+      ActionView::Helpers.send :include, HeaderAndFooterHelpers
+      ActionView::Helpers.send :include, MessageBoxHelpers
+      ActionView::Helpers.send :include, SubformHelpers
 
       ActionController::Base.class_eval do
         append_view_path VIEW_PATH
