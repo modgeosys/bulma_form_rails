@@ -41,9 +41,9 @@ $ gem install bulma_form_rails
 ```
 Continue your installation by executing:
 ```bash
-$ rails bulma_form_rails:install
-$ rails generate bulma_form_rails:pagy_config
-$ rails generate bulma_form_rails:views
+$ bin/rails bulma_form_rails:install
+$ bin/rails generate bulma_form_rails:pagy_config
+$ bin/rails generate bulma_form_rails:views
 ```
 `rails bulma_form_rails:install` will add required resources to your application.
 The Rails generators will create your initial implementation view and configuration templates.  If you modify the generated files, you might not want to to run these generators again.
