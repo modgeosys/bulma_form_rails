@@ -10,3 +10,6 @@ copy_file File.join(Gem.loaded_specs['bulma_form_rails'].full_gem_path, 'lib', '
 
 # Configure RBS
 copy_file File.join(Gem.loaded_specs['bulma_form_rails'].full_gem_path, 'sig', 'bulma_form_helper.rbs'), File.join('sig', 'bulma_form_helper.rbs')
+
+# Install JavaScript dependencies
+system('yarn add @rails/request.js bulma-popover bulmahead')
