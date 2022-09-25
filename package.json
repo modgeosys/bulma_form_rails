@@ -1,6 +1,6 @@
 {
   "name": "@modgeosys/bulma_form_rails",
-  "version": "0.9.4",
+  "version": "0.9.5",
   "description": "Stimulus controllers for BulmaFormRails Gem",
   "module": "lib/javascript/controllers/index.js",
   "main": "lib/javascript/controllers/index.js",
@@ -14,7 +14,7 @@
     "@hotwired/turbo": "^7.1.0",
     "stimulus": "^3.0.1",
     "@rails/request.js": "^0.0.6",
-    "bulma": "^0.9.4",
+    "bulma": "^0.9.5",
     "bulma-popover": "^1.1.1",
     "bulmahead": "^1.3.0"
   },

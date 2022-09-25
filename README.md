@@ -39,7 +39,7 @@ $ rails new -c bulma app_name
 ```
 Or for an existing application, you should install Bulma as the Rails application generator would have.  Something like this might be enough:
 ```bash
-$ yarn add bulma
+$ bin/rails css:install:bulma
 ```
 
 ## Installation
