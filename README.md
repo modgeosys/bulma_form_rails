@@ -14,7 +14,7 @@
 * `bulma_time_select`
 * `bulma_datetime_select`
 
-### Custom and composite fields
+### Custom and aggregate fields
 * `bulma_custom_field` with a standard field label and custom markup passed in a block
 * `bulma_child_objects` creates a "field" with a label and an editable subform for a collection of objects, including options for column totals and row add/delete buttons
 
