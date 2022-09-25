@@ -42,6 +42,11 @@ Or for an existing application, you should install Bulma as the Rails applicatio
 $ bundle add cssbundling-rails
 $ bin/rails css:install:bulma
 ```
+If you were using importmaps in an existing application, you may need to remove these lines from `app/assets/config/manifest.js`:
+```javascript
+-//= link_tree ../../javascript .js
+-//= link_tree ../../../vendor/javascript .js
+```
 You will also need to install the Pagy gem:
 ```bash
 $ bundle add pagy
@@ -60,6 +65,7 @@ Continue your installation by executing:
 $ bin/rails bulma_form_rails:install
 $ bin/rails generate bulma_form_rails:pagy_config
 $ bin/rails generate bulma_form_rails:views
+$ bin/rails assets:precompile
 ```
 `rails bulma_form_rails:install` will add required resources to your application.
 The Rails generators will create your initial implementation view and configuration templates.  If you modify the generated files, you might not want to to run these generators again.
