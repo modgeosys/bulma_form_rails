@@ -32,6 +32,9 @@ https://moderngeosystems.com
 * `bulma_new_form_page`
 * `bulma_edit_form_page`
 
+## Sample Form
+![Sample Form Screenshot](https://github.com/modgeosys/bulma_form_rails/blob/8fd9e8b98cc98a06625b583a121264a10d1e5cab/doc/images/bfr_form_bulma.png?raw=true)
+
 ## Prerequisites
 ### Installing Bulma
 You should have generated your application using something similar to the following command:
