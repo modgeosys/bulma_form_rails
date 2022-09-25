@@ -5,7 +5,7 @@ require 'rails/generators'
 module BulmaFormRails
   module Generators
     class ViewsGenerator < Rails::Generators::Base
-      source_root File.expand_path('../../templates/app/views/bulma_form_rails', __FILE__)
+      source_root File.expand_path('../../templates', __FILE__)
       
       def copy_views
         gem_directory =  File.join(Gem.loaded_specs['bulma_form_rails'].full_gem_path, 'lib', 'templates', 'app', 'views', 'bulma_form_rails')

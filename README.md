@@ -34,16 +34,21 @@
 Install the gem and add to the application's Gemfile by executing:
 ```bash
 $ bundle add bulma_form_rails
-$ rails bulma_form_rails:install
 ```
 Or install it yourself as:
 ```bash
 $ gem install bulma_form_rails
+```
+Continue your installation by executing:
+```bash
 $ rails bulma_form_rails:install
+$ rails generate bulma_form_rails:pagy_config
+$ rails generate bulma_form_rails:views
 ```
 `rails bulma_form_rails:install` will add required resources to your application.
+The Rails generators will create your initial implementation view and configuration templates.  If you modify the generated files, you might not want to to run these generators again.
 
-Then manually `include Pagy::Backend` in your ApplicationController definition and `include Pagy::Frontend` in your ApplicationHelper module definition.
+The final installation step is to manually `include Pagy::Backend` in your ApplicationController definition and `include Pagy::Frontend` in your ApplicationHelper module definition.
 
 ## Examples
 (for a hypothetical user management UI)
