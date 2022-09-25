@@ -89,6 +89,8 @@
     
 <p><img src="../images/moderngeosystems_logo.png"></p>
 
+<p><a href="https://moderngeosystems.com">moderngeosystems.com</a></p>
+
 <p>This Ruby on Rails Helper module allows easy and efficient web form construction with labeled fields of different types.</p>
 
   </section>
@@ -136,7 +138,7 @@
 </li></ul>
 
           <div class="method-source-code" id="bulma_check_box-source">
-            <pre><span class="ruby-comment"># File lib/bulma_form_rails/field_helpers.rb, line 79</span>
+            <pre><span class="ruby-comment"># File lib/bulma_form_rails/field_helpers.rb, line 84</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bulma_check_box</span>(<span class="ruby-identifier">form_or_object</span>, <span class="ruby-identifier">field_name</span>, <span class="ruby-identifier">options</span> = {})
   <span class="ruby-comment"># Prepare parameters.</span>
   <span class="ruby-identifier">prepare_value_class!</span>(<span class="ruby-identifier">options</span>, <span class="ruby-value">base_class:</span> <span class="ruby-string">&#39;checkbox&#39;</span>)
@@ -176,7 +178,7 @@
 </li></ul>
 
           <div class="method-source-code" id="bulma_custom_field-source">
-            <pre><span class="ruby-comment"># File lib/bulma_form_rails/field_helpers.rb, line 16</span>
+            <pre><span class="ruby-comment"># File lib/bulma_form_rails/field_helpers.rb, line 21</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bulma_custom_field</span>(<span class="ruby-identifier">form_or_object</span>, <span class="ruby-identifier">field_name</span>, <span class="ruby-identifier">options</span> = {}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-comment"># Prepare parameters.</span>
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;No block given for custom field&#39;</span>) <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">block_given?</span>
@@ -217,7 +219,7 @@
 </li></ul>
 
           <div class="method-source-code" id="bulma_datetime_select-source">
-            <pre><span class="ruby-comment"># File lib/bulma_form_rails/field_helpers.rb, line 134</span>
+            <pre><span class="ruby-comment"># File lib/bulma_form_rails/field_helpers.rb, line 139</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bulma_datetime_select</span>(<span class="ruby-identifier">form_or_object</span>, <span class="ruby-identifier">field_name</span>, <span class="ruby-identifier">options</span> = {}, <span class="ruby-identifier">html_options</span> = {})
   <span class="ruby-comment"># Prepare parameters.</span>
   <span class="ruby-identifier">prepare_value_class!</span>(<span class="ruby-identifier">options</span>, <span class="ruby-value">base_class:</span> <span class="ruby-string">&#39;select is-fullwidth&#39;</span>)
@@ -259,7 +261,7 @@
 </li></ul>
 
           <div class="method-source-code" id="bulma_input-source">
-            <pre><span class="ruby-comment"># File lib/bulma_form_rails/field_helpers.rb, line 36</span>
+            <pre><span class="ruby-comment"># File lib/bulma_form_rails/field_helpers.rb, line 41</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bulma_input</span>(<span class="ruby-identifier">form_or_object</span>, <span class="ruby-identifier">field_name</span>, <span class="ruby-identifier">type</span> = <span class="ruby-value">:text</span>, <span class="ruby-identifier">options</span> = {})
   <span class="ruby-comment"># Convert type to form method.</span>
   <span class="ruby-identifier">type</span> = <span class="ruby-identifier">type</span>.<span class="ruby-identifier">to_s</span>
@@ -308,7 +310,7 @@
 </li></ul>
 
           <div class="method-source-code" id="bulma_radio_group-source">
-            <pre><span class="ruby-comment"># File lib/bulma_form_rails/field_helpers.rb, line 97</span>
+            <pre><span class="ruby-comment"># File lib/bulma_form_rails/field_helpers.rb, line 102</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bulma_radio_group</span>(<span class="ruby-identifier">form_or_object</span>, <span class="ruby-identifier">field_name</span>, <span class="ruby-identifier">choices</span>, <span class="ruby-identifier">options</span> = {})
   <span class="ruby-comment"># Prepare parameters.</span>
   <span class="ruby-identifier">prepare_value_class!</span>(<span class="ruby-identifier">options</span>, <span class="ruby-value">base_class:</span> <span class="ruby-string">&#39;radio&#39;</span>)
@@ -352,7 +354,7 @@
 </li></ul>
 
           <div class="method-source-code" id="bulma_select-source">
-            <pre><span class="ruby-comment"># File lib/bulma_form_rails/field_helpers.rb, line 116</span>
+            <pre><span class="ruby-comment"># File lib/bulma_form_rails/field_helpers.rb, line 121</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bulma_select</span>(<span class="ruby-identifier">form_or_object</span>, <span class="ruby-identifier">field_name</span>, <span class="ruby-identifier">choices</span>, <span class="ruby-identifier">options</span> = {}, <span class="ruby-identifier">html_options</span> = {})
   <span class="ruby-comment"># Prepare parameters.</span>
   <span class="ruby-identifier">prepare_value_class!</span>(<span class="ruby-identifier">options</span>, <span class="ruby-value">base_class:</span> <span class="ruby-string">&#39;select is-fullwidth&#39;</span>)
@@ -396,7 +398,7 @@
 </li></ul>
 
           <div class="method-source-code" id="bulma_text_area-source">
-            <pre><span class="ruby-comment"># File lib/bulma_form_rails/field_helpers.rb, line 62</span>
+            <pre><span class="ruby-comment"># File lib/bulma_form_rails/field_helpers.rb, line 67</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bulma_text_area</span>(<span class="ruby-identifier">form_or_object</span>, <span class="ruby-identifier">field_name</span>, <span class="ruby-identifier">options</span> = {})
   <span class="ruby-comment"># Prepare parameters.</span>
   <span class="ruby-identifier">prepare_value_class!</span>(<span class="ruby-identifier">options</span>, <span class="ruby-value">base_class:</span> <span class="ruby-string">&#39;textarea&#39;</span>)
@@ -438,7 +440,7 @@
 </li></ul>
 
           <div class="method-source-code" id="bulma_time_select-source">
-            <pre><span class="ruby-comment"># File lib/bulma_form_rails/field_helpers.rb, line 152</span>
+            <pre><span class="ruby-comment"># File lib/bulma_form_rails/field_helpers.rb, line 157</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bulma_time_select</span>(<span class="ruby-identifier">form_or_object</span>, <span class="ruby-identifier">field_name</span>, <span class="ruby-identifier">options</span> = {}, <span class="ruby-identifier">html_options</span> = {})
   <span class="ruby-comment"># Prepare parameters.</span>
   <span class="ruby-identifier">prepare_value_class!</span>(<span class="ruby-identifier">options</span>, <span class="ruby-value">base_class:</span> <span class="ruby-string">&#39;select is-fullwidth&#39;</span>)

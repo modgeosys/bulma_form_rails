@@ -82,6 +82,8 @@
     
 <p><img src="../images/moderngeosystems_logo.png"></p>
 
+<p><a href="https://moderngeosystems.com">moderngeosystems.com</a></p>
+
 <p>This Ruby on Rails Helper module supports tabular editable multi-object subforms.</p>
 
   </section>
@@ -142,7 +144,7 @@
 </li></ol>
 
           <div class="method-source-code" id="bulma_child_objects-source">
-            <pre><span class="ruby-comment"># File lib/bulma_form_rails/subform_helpers.rb, line 25</span>
+            <pre><span class="ruby-comment"># File lib/bulma_form_rails/subform_helpers.rb, line 27</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bulma_child_objects</span>(<span class="ruby-identifier">collection</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">attributes_key</span>, <span class="ruby-identifier">add_child_path</span>, <span class="ruby-identifier">options</span> = {})
   <span class="ruby-identifier">render</span> <span class="ruby-value">partial:</span> <span class="ruby-string">&#39;bulma_form_rails/children&#39;</span>, <span class="ruby-value">object:</span> <span class="ruby-identifier">collection</span>, <span class="ruby-value">locals:</span> {<span class="ruby-value">url:</span> <span class="ruby-identifier">add_child_path</span>, <span class="ruby-value">name:</span> <span class="ruby-identifier">name</span>, <span class="ruby-value">attributes_key:</span> <span class="ruby-identifier">attributes_key</span>}.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">options</span>)
 <span class="ruby-keyword">end</span></pre>

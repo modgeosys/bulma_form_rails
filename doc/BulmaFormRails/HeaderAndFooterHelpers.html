@@ -83,6 +83,8 @@
     
 <p><img src="../images/moderngeosystems_logo.png"></p>
 
+<p><a href="https://moderngeosystems.com">moderngeosystems.com</a></p>
+
 <p>This Ruby on Rails Helper module allows easy and efficient index and form page header and footer rendering.</p>
 
   </section>
@@ -121,7 +123,7 @@
 </li></ul>
 
           <div class="method-source-code" id="bulma_form_footer-source">
-            <pre><span class="ruby-comment"># File lib/bulma_form_rails/header_and_footer_helpers.rb, line 23</span>
+            <pre><span class="ruby-comment"># File lib/bulma_form_rails/header_and_footer_helpers.rb, line 25</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bulma_form_footer</span>(<span class="ruby-identifier">form</span>, <span class="ruby-identifier">models_path</span>, <span class="ruby-identifier">options</span> = {}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
     <span class="ruby-identifier">render</span> <span class="ruby-value">layout:</span> <span class="ruby-string">&#39;bulma_form_rails/form_footer&#39;</span>, <span class="ruby-value">locals:</span> {<span class="ruby-value">form:</span> <span class="ruby-identifier">form</span>, <span class="ruby-value">url:</span> <span class="ruby-identifier">models_path</span>, <span class="ruby-value">options:</span> <span class="ruby-identifier">options</span>}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>
@@ -152,7 +154,7 @@
 </li></ul>
 
           <div class="method-source-code" id="bulma_index_header-source">
-            <pre><span class="ruby-comment"># File lib/bulma_form_rails/header_and_footer_helpers.rb, line 13</span>
+            <pre><span class="ruby-comment"># File lib/bulma_form_rails/header_and_footer_helpers.rb, line 15</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bulma_index_header</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">models_path</span>)
   <span class="ruby-identifier">render</span> <span class="ruby-value">partial:</span> <span class="ruby-string">&#39;bulma_form_rails/index_header&#39;</span>, <span class="ruby-value">locals:</span> {<span class="ruby-value">name:</span> <span class="ruby-identifier">name</span>, <span class="ruby-value">models_path:</span> <span class="ruby-identifier">models_path</span>}
 <span class="ruby-keyword">end</span></pre>

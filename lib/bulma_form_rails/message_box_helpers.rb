@@ -1,9 +1,10 @@
 require 'rexml/document'
 
-# rdoc-image:images/moderngeosystems_logo.png
 module BulmaFormRails
 
   # rdoc-image:../images/moderngeosystems_logo.png
+  # 
+  # https://moderngeosystems.com
   # 
   # This Ruby on Rails Helper module allows easy and efficient flash and validation error box rendering.
   module MessageBoxHelpers

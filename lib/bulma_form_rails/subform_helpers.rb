@@ -4,6 +4,8 @@ module BulmaFormRails
 
   # rdoc-image:../images/moderngeosystems_logo.png
   # 
+  # https://moderngeosystems.com
+  # 
   # This Ruby on Rails Helper module supports tabular editable multi-object subforms. 
   module SubformHelpers
     

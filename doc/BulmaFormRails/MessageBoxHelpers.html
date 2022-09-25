@@ -83,6 +83,8 @@
     
 <p><img src="../images/moderngeosystems_logo.png"></p>
 
+<p><a href="https://moderngeosystems.com">moderngeosystems.com</a></p>
+
 <p>This Ruby on Rails Helper module allows easy and efficient flash and validation error box rendering.</p>
 
   </section>
@@ -109,7 +111,7 @@
           <p>Render a standard flash messages box.  Automatically included with <code>bulma_validation_box</code> and <code>bulma_index_header</code> output.</p>
 
           <div class="method-source-code" id="bulma_message_box-source">
-            <pre><span class="ruby-comment"># File lib/bulma_form_rails/message_box_helpers.rb, line 12</span>
+            <pre><span class="ruby-comment"># File lib/bulma_form_rails/message_box_helpers.rb, line 13</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bulma_message_box</span>
   <span class="ruby-identifier">render</span> <span class="ruby-value">partial:</span> <span class="ruby-string">&#39;bulma_form_rails/message_box&#39;</span>
 <span class="ruby-keyword">end</span></pre>
@@ -133,7 +135,7 @@
 </li></ul>
 
           <div class="method-source-code" id="bulma_validation_box-source">
-            <pre><span class="ruby-comment"># File lib/bulma_form_rails/message_box_helpers.rb, line 18</span>
+            <pre><span class="ruby-comment"># File lib/bulma_form_rails/message_box_helpers.rb, line 19</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bulma_validation_box</span>(<span class="ruby-identifier">model</span>)
   <span class="ruby-identifier">render</span> <span class="ruby-value">partial:</span> <span class="ruby-string">&#39;bulma_form_rails/validation_box&#39;</span>, <span class="ruby-value">locals:</span> {<span class="ruby-value">model:</span> <span class="ruby-identifier">model</span>}
 <span class="ruby-keyword">end</span></pre>
