@@ -42,7 +42,10 @@ Or for an existing application, you should install Bulma as the Rails applicatio
 $ bundle add cssbundling-rails
 $ bin/rails css:install:bulma
 ```
-
+You will also need to install the Pagy gem:
+```bash
+$ bundle add pagy
+```
 ## Installation
 Install the gem and add to the application's Gemfile by executing:
 ```bash

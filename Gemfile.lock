@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    bulma_form_rails (0.9.6)
+    bulma_form_rails (0.9.7)
       pagy (~> 5.10)
       rails (~> 7.0.4)
       rake (~> 13.0.6)
