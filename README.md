@@ -33,21 +33,25 @@ https://moderngeosystems.com
 * `bulma_edit_form_page`
 
 ## Prerequisites
+### Installing Bulma
 You should have generated your application using something similar to the following command:
 ```bash
 $ rails new -c bulma app_name
 ```
-Or for an existing application, you should install Bulma as the Rails application generator would have.  Something like this might be enough:
+Or for an existing application, you should install Bulma as the Rails application generator would have:
 ```bash
 $ bundle add cssbundling-rails
 $ bin/rails css:install:bulma
 ```
-If you were using importmaps in an existing application, you may need to remove these lines from `app/assets/config/manifest.js`:
+#### If you were using importmaps in an existing application
+You may need to remove these lines from `app/assets/config/manifest.js`:
 ```javascript
 -//= link_tree ../../javascript .js
 -//= link_tree ../../../vendor/javascript .js
 ```
-You will also need to install the Pagy gem:
+and you may need to replace `<%= javascript_importmap_tags %>` with `<%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>` in `app.views/layouts/application.html.erb`.
+### Installing Pagy
+You will need to install the Pagy gem if you haven't already done so:
 ```bash
 $ bundle add pagy
 ```
