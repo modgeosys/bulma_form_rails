@@ -30,6 +30,16 @@
 * `bulma_new_form_page`
 * `bulma_edit_form_page`
 
+## Prerequisites
+You should have generated your application using something similar to the following command:
+```bash
+$ rails new -c bulma app_name
+```
+Or for an existing application, you should install Bulma as the Rails application generator would have.  Something like this might be enough:
+```bash
+$ yarn add bulma
+```
+
 ## Installation
 Install the gem and add to the application's Gemfile by executing:
 ```bash
