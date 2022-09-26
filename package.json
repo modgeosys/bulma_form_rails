@@ -1,6 +1,6 @@
 {
   "name": "@modgeosys/bulma_form_rails",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Stimulus controllers for BulmaFormRails Gem",
   "module": "lib/javascript/controllers/index.js",
   "main": "lib/javascript/controllers/index.js",

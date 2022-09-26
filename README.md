@@ -36,7 +36,7 @@ https://moderngeosystems.com
 ### Form page
 ![Sample form page screenshot](https://github.com/modgeosys/bulma_form_rails/blob/8fd9e8b98cc98a06625b583a121264a10d1e5cab/doc/images/bfr_form_bulma.png?raw=true)
 ### Index page
-![Sample index pager screenshot]()
+![Sample index pager screenshot](https://github.com/modgeosys/bulma_form_rails/blob/de709a4d3badd47c2b8574da2b737f5ad655dcfb/doc/images/bfr_index_bulma.png?raw=true)
 
 ## Prerequisites
 ### Installing Bulma
@@ -82,7 +82,7 @@ The Rails generators will create your initial implementation view and configurat
 
 The final installation step is to manually `include Pagy::Backend` in your ApplicationController definition and `include Pagy::Frontend` in your ApplicationHelper module definition.
 
-## Examples
+## Usage
 (for a hypothetical user management UI)
 
 ### Sample `index.html.erb` page
