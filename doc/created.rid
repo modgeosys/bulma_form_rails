@@ -1,6 +1,15 @@
-Sun, 25 Sep 2022 17:06:32 -0600
-lib/bulma_form_rails/field_helpers.rb	Sun, 25 Sep 2022 17:06:20 -0600
-lib/bulma_form_rails/form_page_helpers.rb	Sun, 25 Sep 2022 17:05:34 -0600
-lib/bulma_form_rails/header_and_footer_helpers.rb	Sun, 25 Sep 2022 17:05:46 -0600
-lib/bulma_form_rails/message_box_helpers.rb	Sun, 25 Sep 2022 17:05:54 -0600
-lib/bulma_form_rails/subform_helpers.rb	Sun, 25 Sep 2022 17:06:03 -0600
+Sun, 31 Mar 2024 13:41:31 -0600
+lib/bulma_form_rails/field_helpers.rb	Sun, 31 Mar 2024 13:40:44 -0600
+lib/bulma_form_rails/form_page_helpers.rb	Sun, 31 Mar 2024 12:53:04 -0600
+lib/bulma_form_rails/header_and_footer_helpers.rb	Sun, 31 Mar 2024 12:53:04 -0600
+lib/bulma_form_rails/javascript/controllers/child_objects_controller.js	Sun, 18 Sep 2022 16:12:00 -0600
+lib/bulma_form_rails/message_box_helpers.rb	Sun, 31 Mar 2024 12:53:04 -0600
+lib/bulma_form_rails/railtie.rb	Sun, 25 Sep 2022 08:19:41 -0600
+lib/bulma_form_rails/subform_helpers.rb	Sun, 31 Mar 2024 12:53:04 -0600
+lib/bulma_form_rails/version.rb	Sun, 31 Mar 2024 12:57:04 -0600
+lib/bulma_form_rails.rb	Sat, 24 Sep 2022 09:22:35 -0600
+lib/generators/bulma_form_rails/pagy_config_generator.rb	Sat, 24 Sep 2022 20:02:39 -0600
+lib/generators/bulma_form_rails/views_generator.rb	Sat, 24 Sep 2022 20:02:58 -0600
+lib/install/bulma_form_rails.rb	Sat, 24 Sep 2022 19:50:23 -0600
+lib/tasks/bulma_form_rails_tasks.rake	Sat, 24 Sep 2022 20:22:01 -0600
+lib/templates/config/initializers/pagy.rb	Fri, 29 Oct 2021 14:47:41 -0600
