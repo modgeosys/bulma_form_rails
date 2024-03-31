@@ -1,6 +1,6 @@
-![Modern geoSystems logo](https://github.com/modgeosys/bulma_form_rails/blob/8fde36bf59e86254cfe9e792f395caba6f60a2a4/doc/images/moderngeosystems_logo.png?raw=true)
+![Modern geoSystems logo](https://github.com/modgeosys/bulma_form_rails/blob/8fde36bf59e86254cfe9e792f395caba6f60a2a4/doc/images/moderngeosystems_logo.jpg?raw=true)
 
-https://moderngeosystems.com
+https://kevinweller.name
 # bulma_form_rails
 `bulma_form_rails` provides Rails helpers for efficiently building forms using the Bulma CSS library.
 
