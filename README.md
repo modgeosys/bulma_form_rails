@@ -1,4 +1,4 @@
-![Modern geoSystems logo](https://github.com/modgeosys/bulma_form_rails/blob/8fde36bf59e86254cfe9e792f395caba6f60a2a4/doc/images/moderngeosystems_logo.jpg?raw=true)
+<img src="https://github.com/modgeosys/bulma_form_rails/blob/371b651b4cf38336f85378467f15b98b5367049e/doc/images/modgeosys_logo.jpg?raw=true" width="147px" height="130px" alt="Logo">
 
 https://kevinweller.name
 # bulma_form_rails
