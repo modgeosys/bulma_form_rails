@@ -2,12 +2,12 @@ require 'rexml/document'
 
 # rdoc-image:https://github.com/modgeosys/bulma_form_rails/blob/371b651b4cf38336f85378467f15b98b5367049e/doc/images/modgeosys_logo.jpg?raw=true
 # 
-# https://moderngeosystems.com
+# https://kevinweller.name
 module BulmaFormRails
 
   # rdoc-image:https://github.com/modgeosys/bulma_form_rails/blob/371b651b4cf38336f85378467f15b98b5367049e/doc/images/modgeosys_logo.jpg?raw=true
   # 
-  # https://moderngeosystems.com
+  # https://kevinweller.name
   # 
   # This Ruby on Rails Helper module allows easy and efficient web form construction with labeled fields of different types.
   module FieldHelpers
