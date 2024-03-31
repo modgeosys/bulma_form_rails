@@ -1,4 +1,4 @@
-<img src="https://github.com/modgeosys/bulma_form_rails/blob/e5b42592ca04a9579e97fb774f9f22e3a26d380c/doc/images/modgeosys_logo.jpg?raw=true" alt="Logo">
+![Professional Logo](https://github.com/modgeosys/bulma_form_rails/blob/e5b42592ca04a9579e97fb774f9f22e3a26d380c/doc/images/modgeosys_logo.jpg?raw=true)
 
 https://kevinweller.name
 # bulma_form_rails

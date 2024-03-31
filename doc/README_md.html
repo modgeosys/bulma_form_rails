@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>README - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/navigation.js" defer></script>
+<script src="./js/search.js" defer></script>
+<script src="./js/search_index.js" defer></script>
+<script src="./js/searcher.js" defer></script>
+<script src="./js/darkfish.js" defer></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#label-bulma_form_rails">bulma_form_rails</a>
+    <li><a href="#label-Features">Features</a>
+    <li><a href="#label-Standard+fields+with+default+or+custom+labels-2C+standard+and+optional+CSS+classes">Standard fields with default or custom labels, standard and optional CSS classes</a>
+    <li><a href="#label-Custom+and+aggregate+fields">Custom and aggregate fields</a>
+    <li><a href="#label-Message+boxes">Message boxes</a>
+    <li><a href="#label-Headers+and+footers">Headers and footers</a>
+    <li><a href="#label-Form+page+template+helpers">Form page template helpers</a>
+    <li><a href="#label-Screenshots">Screenshots</a>
+    <li><a href="#label-Form+page">Form page</a>
+    <li><a href="#label-Index+page">Index page</a>
+    <li><a href="#label-Prerequisites">Prerequisites</a>
+    <li><a href="#label-Installing+Bulma">Installing Bulma</a>
+    <li><a href="#label-If+you+were+using+importmaps+in+an+existing+application">If you were using importmaps in an existing application</a>
+    <li><a href="#label-Installing+Pagy">Installing Pagy</a>
+    <li><a href="#label-Installation">Installation</a>
+    <li><a href="#label-Usage">Usage</a>
+    <li><a href="#label-Sample+index.html.erb+page">Sample <code>index.html.erb</code> page</a>
+    <li><a href="#label-Sample+new.html.erb+page">Sample <code>new.html.erb</code> page</a>
+    <li><a href="#label-Sample+edit.html.erb+page">Sample <code>edit.html.erb</code> page</a>
+    <li><a href="#label-Sample+_form.html.erb+partial">Sample <code>_form.html.erb</code> partial</a>
+    <li><a href="#label-Development">Development</a>
+    <li><a href="#label-Contributing">Contributing</a>
+    <li><a href="#label-License">License</a>
+  </ul>
+</div>
+
+
+  <div id="project-metadata">
+    
+<div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+    <li><a href="./README_md.html">README</a>
+    <li><a href="./lib/bulma_form_rails/javascript/controllers/child_objects_controller_js.html">child_objects_controller.js</a>
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page README.md">
+
+<p><img src="https://github.com/modgeosys/bulma_form_rails/blob/e5b42592ca04a9579e97fb774f9f22e3a26d380c/doc/images/modgeosys_logo.jpg?raw=true"></p>
+
+<p><a href="https://kevinweller.name">kevinweller.name</a></p>
+
+<h1 id="label-bulma_form_rails">bulma_form_rails<span><a href="#label-bulma_form_rails">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<p><code>bulma_form_rails</code> provides Rails helpers for efficiently building forms using the Bulma CSS library.</p>
+
+<h2 id="label-Features">Features<span><a href="#label-Features">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Standard+fields+with+default+or+custom+labels-2C+standard+and+optional+CSS+classes">Standard fields with default or custom labels, standard and optional CSS classes<span><a href="#label-Standard+fields+with+default+or+custom+labels-2C+standard+and+optional+CSS+classes">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p><code>bulma_input</code> with all <code>type</code> options</p>
+</li><li>
+<p><code>bulma_text_area</code></p>
+</li><li>
+<p><code>bulma_checkbox</code></p>
+</li><li>
+<p><code>bulma_radio_group</code> defines <em>all</em> radio options with a single call</p>
+</li><li>
+<p><code>bulma_select</code></p>
+</li><li>
+<p><code>bulma_date_select</code></p>
+</li><li>
+<p><code>bulma_time_select</code></p>
+</li><li>
+<p><code>bulma_datetime_select</code></p>
+</li></ul>
+
+<h3 id="label-Custom+and+aggregate+fields">Custom and aggregate fields<span><a href="#label-Custom+and+aggregate+fields">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p><code>bulma_custom_field</code> with a standard field label and custom markup passed in a block</p>
+</li><li>
+<p><code>bulma_child_objects</code> creates a “field” with a label and an editable subform for a collection of objects, including options for column totals and row add/delete buttons</p>
+</li></ul>
+
+<h3 id="label-Message+boxes">Message boxes<span><a href="#label-Message+boxes">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p><code>bulma_message_box</code> renders a standard flash messages box</p>
+</li><li>
+<p><code>bulma_validation_box</code> renders a standard model validation messages box</p>
+</li></ul>
+
+<h3 id="label-Headers+and+footers">Headers and footers<span><a href="#label-Headers+and+footers">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p><code>bulma_index_header</code> renders a header for a standard index page</p>
+</li><li>
+<p><code>bulma_form_footer</code> renders a footer for a standard model form page</p>
+</li></ul>
+
+<h3 id="label-Form+page+template+helpers">Form page template helpers<span><a href="#label-Form+page+template+helpers">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p><code>bulma_new_form_page</code></p>
+</li><li>
+<p><code>bulma_edit_form_page</code></p>
+</li></ul>
+
+<h2 id="label-Screenshots">Screenshots<span><a href="#label-Screenshots">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Form+page">Form page<span><a href="#label-Form+page">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p><img src="https://github.com/modgeosys/bulma_form_rails/blob/8fd9e8b98cc98a06625b583a121264a10d1e5cab/doc/images/bfr_form_bulma.png?raw=true"></p>
+
+<h3 id="label-Index+page">Index page<span><a href="#label-Index+page">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p><img src="https://github.com/modgeosys/bulma_form_rails/blob/de709a4d3badd47c2b8574da2b737f5ad655dcfb/doc/images/bfr_index_bulma.png?raw=true"></p>
+
+<h2 id="label-Prerequisites">Prerequisites<span><a href="#label-Prerequisites">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Installing+Bulma">Installing Bulma<span><a href="#label-Installing+Bulma">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>You should have generated your application using something similar to the following command:</p>
+
+<pre>$ rails new -c bulma app_name</pre>
+
+<p>Or for an existing application, you should install Bulma as the Rails application generator would have:</p>
+
+<pre>$ bundle add cssbundling-rails
+$ bin/rails css:install:bulma</pre>
+
+<h4 id="label-If+you+were+using+importmaps+in+an+existing+application">If you were using importmaps in an existing application<span><a href="#label-If+you+were+using+importmaps+in+an+existing+application">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<p>You may need to remove these lines from <code>app/assets/config/manifest.js</code>:</p>
+
+<pre>-//= link_tree ../../javascript .js
+-//= link_tree ../../../vendor/javascript .js</pre>
+
+<p>and you may need to replace <code>&lt;%= javascript_importmap_tags %&gt;</code> with <code>&lt;%= javascript_include_tag &quot;application&quot;, &quot;data-turbo-track&quot;: &quot;reload&quot;, defer: true %&gt;</code> in <code>app.views/layouts/application.html.erb</code>.</p>
+
+<h3 id="label-Installing+Pagy">Installing Pagy<span><a href="#label-Installing+Pagy">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>You will need to install the Pagy gem if you haven’t already done so:</p>
+
+<pre>$ bundle add pagy</pre>
+
+<h2 id="label-Installation">Installation<span><a href="#label-Installation">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Install the gem and add to the application’s Gemfile by executing:</p>
+
+<pre>$ bundle add bulma_form_rails</pre>
+
+<p>Or install it yourself as:</p>
+
+<pre>$ gem install bulma_form_rails</pre>
+
+<p>Continue your installation by executing:</p>
+
+<pre>$ bin/rails bulma_form_rails:install
+$ bin/rails generate bulma_form_rails:pagy_config
+$ bin/rails generate bulma_form_rails:views
+$ bin/rails assets:precompile</pre>
+
+<p><code>rails bulma_form_rails:install</code> will add required resources to your application. The Rails generators will create your initial implementation view and configuration templates. If you modify the generated files, you might not want to to run these generators again.</p>
+
+<p>The final installation step is to manually <code>include Pagy::Backend</code> in your ApplicationController definition and <code>include Pagy::Frontend</code> in your ApplicationHelper module definition.</p>
+
+<h2 id="label-Usage">Usage<span><a href="#label-Usage">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>(for a hypothetical user management UI)</p>
+
+<h3 id="label-Sample+index.html.erb+page">Sample <code>index.html.erb</code> page<span><a href="#label-Sample+index.html.erb+page">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<pre>&lt;section class=&quot;section&quot;&gt;
+  &lt;%= bulma_index_header :user, new_user_path(page: params[:page]) %&gt;
+  &lt;!-- Your index action content goes here. --&gt;
+  &lt;%= pagy_bulma_nav(@pagy) %&gt;
+&lt;/section&gt;</pre>
+
+<h3 id="label-Sample+new.html.erb+page">Sample <code>new.html.erb</code> page<span><a href="#label-Sample+new.html.erb+page">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<pre>&lt;%= bulma_new_form_page :user, @user, users_path(page: params[:page]) %&gt;</pre>
+
+<h3 id="label-Sample+edit.html.erb+page">Sample <code>edit.html.erb</code> page<span><a href="#label-Sample+edit.html.erb+page">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<pre>&lt;%= bulma_edit_form_page :user, @user, users_path(page: params[:page]), user_path(page: params[:page]) %&gt;</pre>
+
+<h3 id="label-Sample+_form.html.erb+partial">Sample <code>_form.html.erb</code> partial<span><a href="#label-Sample+_form.html.erb+partial">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<pre>&lt;%= form_with model: user, url: url do |form| %&gt;
+  &lt;%= bulma_validation_box user %&gt;
+  
+  &lt;fieldset id=&quot;basic_fields&quot; class=&quot;box&quot;&gt;
+    &lt;legend&gt;Basic User Information&lt;/legend&gt;
+
+    &lt;%= bulma_input form, :username, :text, class: &#39;is-danger&#39; %&gt;
+
+    &lt;%= bulma_custom_field(form, :password) do %&gt;
+      &lt;div class=&quot;field&quot;&gt;
+        &lt;div class=&quot;control&quot;&gt;
+          &lt;%= password_field_tag &#39;user[password]&#39;, user.password, class: &#39;input is-danger&#39; %&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;% end %&gt;
+
+    &lt;%= bulma_custom_field(form, :confirmed_password) do %&gt;
+      &lt;div class=&quot;field&quot;&gt;
+        &lt;div class=&quot;control&quot;&gt;
+          &lt;%= password_field_tag &#39;user[confirmed_password]&#39;, user.confirmed_password, class: &#39;input is-danger&#39; %&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;% end %&gt;
+
+    &lt;%= bulma_check_box form, :login_allowed, label: &#39;Login allowed?&#39; %&gt;
+    &lt;%= bulma_select form, :role_id, selectable_roles(@session_role), class: &#39;is-danger&#39; %&gt;
+        &lt;%= bulma_radio_group form, :role, [[&#39;Administrator&#39;, :admin], [&#39;Regular user&#39;, :regular]], class: &#39;has-text-danger&#39; %&gt;
+    
+  &lt;/fieldset&gt;
+
+  &lt;fieldset id=&quot;person_fields&quot; class=&quot;box&quot;&gt;
+    &lt;legend&gt;Personal Information&lt;/legend&gt;
+    
+    &lt;%= form.fields_for :person do |person_subform| %&gt;
+      &lt;%= bulma_input person_subform, :first_name, :text, class: &#39;is-danger&#39; %&gt;
+      &lt;%= bulma_input person_subform, :middle_name %&gt;
+      &lt;%= bulma_input person_subform, :last_name, :text, class: &#39;is-danger&#39; %&gt;
+      &lt;%= bulma_input person_subform, :home_phone, :phone %&gt;
+      &lt;%= bulma_input person_subform, :work_phone, :phone %&gt;
+      &lt;%= bulma_input person_subform, :work_extension %&gt;
+      &lt;%= bulma_input person_subform, :mobile_phone, :phone %&gt;
+      &lt;%= bulma_input person_subform, :email_address, :email %&gt;
+          &lt;%= bulma_child_objects(relatives || [], &#39;relatives&#39;, :relative, users_add_child_path, total_columns: [3, 4]) %&gt;
+      
+      &lt;fieldset id=&quot;address_fields&quot; class=&quot;box&quot;&gt;
+        &lt;legend&gt;Address&lt;/legend&gt;
+        
+        &lt;%= person_subform.fields_for :address do |address_subform| %&gt;
+          &lt;%= bulma_text_area address_subform, :street_address, cols: 40, rows: 5 %&gt;
+          &lt;%= bulma_input address_subform, :city %&gt;
+          &lt;%= bulma_select address_subform, :state_id, State.all.order(:name).collect {|state| [state.name, state.id]}, include_blank: true %&gt;
+          &lt;%= bulma_input address_subform, :zip_or_postal_code %&gt;
+          &lt;%= bulma_select address_subform, :country, [&quot;United States&quot;] %&gt;
+        &lt;% end %&gt;
+        
+      &lt;/fieldset&gt;
+      
+    &lt;% end %&gt;
+    
+  &lt;/fieldset&gt;
+
+  &lt;%= bulma_form_footer form, users_path(page: params[:page]) %&gt;
+&lt;% end %&gt;</pre>
+
+<h2 id="label-Development">Development<span><a href="#label-Development">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>After checking out the repo, run <code>bin/setup</code> to install dependencies. Then, run <code>rake test</code> to run the tests. You can also run <code>bin/console</code> for an interactive prompt that will allow you to experiment.</p>
+
+<p>To install this gem onto your local machine, run <code>bundle exec rake install</code>. To release a new version, update the version number in <code>version.rb</code>, and then run <code>bundle exec rake release</code>, which will create a git tag for the version, push git commits and the created tag, and push the <code>.gem</code> file to <a href="https://rubygems.org">rubygems.org</a>.</p>
+
+<h2 id="label-Contributing">Contributing<span><a href="#label-Contributing">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Bug reports and pull requests are welcome on GitHub at <a href="https://github.com/modgeosys/bulma_form_rails">github.com/modgeosys/bulma_form_rails</a>.</p>
+
+<h2 id="label-License">License<span><a href="#label-License">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>The gem is available as open source under the terms of the <a href="https://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause License</a>.</p>
+
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.4.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
